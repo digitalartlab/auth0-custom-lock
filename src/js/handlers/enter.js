@@ -34,7 +34,7 @@ module.exports = function enter( element ) {
     showLDAP( element, passwordField );
   }
   else {
-    if ( NLX.features.person_api_lookup ) {
+    if ( NLX.features.person_api_lookup === 'true' ) {
 
       ui.setLockState( element, 'loading' );
 
@@ -51,11 +51,11 @@ module.exports = function enter( element ) {
               else {
                 showNonLDAP( element );
               }
-            })
+            });
           }
-      ).catch( function() {
-        showNonLDAP( element );
-      });
+        ).catch( function() {
+          showNonLDAP( element );
+        });
     }
     else {
       showNonLDAP( element );

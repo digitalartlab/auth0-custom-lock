@@ -16,7 +16,7 @@ module.exports = function() {
     });
 
     scriptTag.async = true;
-    scriptTag.src = 'https://www.googletagmanager.com/gtm.js?id=' + NLX.GTM_ID;
+    // scriptTag.src = 'https://www.googletagmanager.com/gtm.js?id=' + NLX.GTM_ID;
 
     firstScriptTag.parentNode.insertBefore( scriptTag, firstScriptTag );
   }
