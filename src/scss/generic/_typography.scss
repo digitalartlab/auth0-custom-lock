@@ -1,0 +1,54 @@
+body {
+  background: $backgroundColor;
+  color: $darkerGrey;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.03em;
+  margin: 0 1.5em;
+
+  @media ( min-height: 50em ) and ( min-width: 40em ) {
+    display: flex;
+    padding: 10em 1em;
+    height: calc( 100vh - 6em );
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+[data-hidden] {
+  position: absolute;
+  opacity: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $black;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+  }
+
+}
+
+p:first-child {
+  margin-top: 0;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: $lightGrey;
+  margin: 2em 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999em;
+}

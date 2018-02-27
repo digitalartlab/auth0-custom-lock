@@ -1,0 +1,60 @@
+.banner {
+  background: $black;
+  color: $white;
+  border-bottom: 1px solid $white;
+  padding: 1.5em;
+  text-align: center;
+  margin: 0 -1.5em 2em -1.5em;
+  display: flex;
+  flex-direction: column;
+
+  @media ( min-height: 50em ) and ( min-width: 40em ) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 0;
+  }
+
+  p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media ( min-width: 40em ) {
+      display: block;
+    }
+  }
+
+
+  &__button {
+    background-color: rgba( $white, .2 );
+    color: $white;
+    text-decoration: none;
+    border-radius: 1.25em;
+    font-weight: bold;
+    padding: .25em 1em;
+    margin: 1em 0 0 1em;
+    text-transform: uppercase;
+
+    @media ( min-width: 40em ) {
+      margin: .5em 0 .5em 1em;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: none;
+      outline: 0;
+      background-color: $lightGrey;
+      border-color: $lightGrey;
+      color: $blue;
+    }
+  }
+}

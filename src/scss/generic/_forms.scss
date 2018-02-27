@@ -1,0 +1,40 @@
+form {
+  margin: 0;
+
+  * {
+    font-family: inherit;
+  }
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+label {
+  margin: 2em 0;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 100%;
+  background-color: $lightGrey;
+  border: 1px solid $white;
+  border-bottom: 1px solid $black;
+  padding: .5em;
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $blue;
+    outline: none;
+  }
+
+  &:focus {
+    background-color: $white;
+  }
+}

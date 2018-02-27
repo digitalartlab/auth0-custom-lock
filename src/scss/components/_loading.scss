@@ -1,0 +1,13 @@
+.loading {
+
+  &__spinner {
+    display: block;
+    margin: 3em auto;
+    width: 2em;
+  }
+
+  &__status {
+    text-align: center;
+    margin: 1em 0;
+  }
+}

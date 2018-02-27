@@ -1,0 +1,41 @@
+.legal-links {
+  position: absolute;
+  bottom: -3em;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+  li {
+    margin: 0 1em 0 0;
+    font-size: .75em;
+
+    &:last-child {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $black;
+    border-radius: 1.25em;
+    padding: .5em 1em;
+
+    &:hover {
+      color: $blue;
+      text-decoration: underline;
+      text-decoration-skip: ink;
+    }
+
+    &:focus {
+      outline: none;
+      text-decoration: none;
+      box-shadow: 0 0 0 1px $blue;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+}
