@@ -2,7 +2,7 @@ var dom = require( 'helpers/dom' );
 var ui = require( 'helpers/ui' );
 var fireGAEvent = require( 'helpers/fireGAEvent' );
 
-module.exports = function( element ) {
+function setConnections( element ) {
   var form = element.form;
   var url = 'https://' + NLX.auth0_domain + '/public/api/' + form.webAuthConfig.clientID + '/connections';
   var visualStatusReport = document.getElementById( 'loading__status' );
@@ -63,4 +63,9 @@ module.exports = function( element ) {
     // Could not check which connections are available for this RP; just show all.
     ui.setLockState( element, 'initial' );
   });
+
+}
+
+module.exports = function( element ) {
+  setConnections( element );
 };

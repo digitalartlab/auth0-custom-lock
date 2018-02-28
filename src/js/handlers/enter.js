@@ -7,12 +7,15 @@ function showNonLDAP( element ) {
   fireGAEvent( 'Screen change', 'Continued as non-LDAP' );
 }
 
-function showLDAP( element, passwordField ) {
+function showLDAP( element, passwordField, emailFieldValue ) {
+  var repeatEmailField = document.getElementById( 'email-repeat' );
+
   // show password field
   ui.setLockState( element, 'ldap' );
   // focus password field
   setTimeout( function() {
     passwordField.focus();
+    repeatEmailField.value = emailFieldValue;
   }, 400 );
 
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
@@ -46,7 +49,7 @@ module.exports = function enter( element ) {
               var isLDAP = userinfo.hasOwnProperty( 'user_email' ) && userinfo.hasOwnProperty( 'connection_method' ) && userinfo[ 'connection_method' ] === 'ad';
 
               if ( isLDAP ) {
-                showLDAP( element, passwordField );
+                showLDAP( element, passwordField, emailField.value );
               }
               else {
                 showNonLDAP( element );
@@ -58,7 +61,7 @@ module.exports = function enter( element ) {
         });
     }
     else {
-      showLDAP( element, passwordField );
+      showLDAP( element, passwordField, emailField.value );
     }
   }
 };

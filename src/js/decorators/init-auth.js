@@ -8,7 +8,9 @@ function getConfig( string ) {
     config.domain = hostedConfig.auth0Domain;
     config.clientID = hostedConfig.clientID;
     config.redirectUri = hostedConfig.callbackURL;
-    config.responseType = 'code';
+    config.responseType = ( config.internalOptions || {}).response_type ||
+    config.callbackOnLocationHash ? 'token' : 'code';
+    config.connection = hostedConfig.connection;
     config = Object.assign( config, hostedConfig.internalOptions );
   }
   else {
