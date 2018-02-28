@@ -1,10 +1,10 @@
 {
-  "auth0_domain" : "auth.mozilla.auth0.com",
-  "LDAP_connection_name" : "Mozilla-LDAP",
+  "auth0_domain" : "ckc-zoetermeer.eu.auth0.com",
+  "LDAP_connection_name" : "Personen",
   "person_api_domain" : "https://person-api.sso.mozilla.com/v1/connection/",
   "GTM_ID": "GTM-T2N2BRW",
   "features": {
     "autologin": "true",
-    "person_api_lookup": "true"
+    "person_api_lookup": "false"
   }
 }

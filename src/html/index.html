@@ -34,17 +34,17 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mozilla Login</title>
+    <title>CKC &amp; partners - Inloggen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../../dist/css/styles.css" type="text/css" inline />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   </head>
   <body data-decorator="load-ga display-rp-name">
-    <div class="banner">
-      <p>CKC-ID vervangt de Digital Art Lab accounts. Je wachtwoord is hetzelfde. <a href="https://discourse.mozilla.org/t/important-changing-the-look-of-your-login/25843" class="banner__button">Meer info</a></p>
-    </div>
+    <!-- <div class="banner">
+      <p>CKC-ID is de vervanging voor je Digital Art Lab-account. Je wachtwoord blijft hetzelfde. <a href="https://discourse.mozilla.org/t/important-changing-the-look-of-your-login/25843" class="banner__button">Meer info</a></p>
+    </div> -->
     <div class="card">
-      <a href="https://mozilla.org" class="logo"><img alt="Mozilla" src="../images/mozilla.svg" inline /></a>
+      <a href="https://ckc-zoetermeer.nl" class="logo"><img alt="CKC &amp; partners" src="../images/ckc-logo.svg" inline /></a>
       <noscript><p>This login form requires JavaScript to work, please enable it to log in.</p></noscript>
       <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
         <fieldset data-decorator="filter-connections">
@@ -55,21 +55,21 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
             <p role="alert" id="loading__status" class="loading__status"></p>
           </div>
           <div id="initial" data-screen data-hidden inert>
-            <p id="initial-login-text">Log in with email<span> or third-party</span></p>
+            <p id="initial-login-text">Log in met email<span> of social media</span></p>
             <label for="field-email" class="visually-hidden">E-mail address</label>
             <input type="email" name="username" id="field-email" placeholder="Email address" autocomplete="username email" autofocus />
             <input type="submit" class="button button--full-width" id="enter-initial" value="Enter" />
             <ul class="login-options list list--plain">
-              <li data-optional-rp="github">
-                <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-github">
-                  <img inline class="icon" src="../images/github.svg"">
-                  <span>Log in with GitHub</span>
+              <li data-optional-rp="facebook">
+                <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
+                  <img inline class="icon" src="../images/facebook.svg">
+                  <span>Log in met Facebook</span>
                 </button>
               </li>
               <li data-optional-rp="google-oauth2">
                 <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-google">
-                  <img inline  class="icon" src="../images/google.svg"">
-                  <span>Log in with Google</span>
+                  <img inline  class="icon" src="../images/google.svg">
+                  <span>Log in met Google</span>
                 </button>
               </li>
             </ul>
@@ -90,16 +90,16 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
             </ul>
             <a href="https://wiki.mozilla.org/IAM/Frequently_asked_questions#Q:_Why_do_you_support_email_login_.28.22passwordless.22.29_if_it.27s_less_safe_than_other_methods.3F" class="button button--text-only button--unpadded">Why an email?</a>
             <ul class="login-options list list--plain">
-              <li data-optional-rp="github">
-                <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-github">
-                  <img inline class="icon" src="../images/github.svg"">
-                  <span>Log in with GitHub</span>
+              <li data-optional-rp="facebook">
+                <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
+                  <img inline class="icon" src="../images/facebook.svg">
+                  <span>Log in met Facebook</span>
                 </button>
               </li>
               <li data-optional-rp="google-oauth2">
                 <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-google">
-                  <img inline  class="icon" src="../images/google.svg"">
-                  <span>Log in with Google</span>
+                  <img inline  class="icon" src="../images/google.svg">
+                  <span>Log in met Google</span>
                 </button>
               </li>
             </ul>
@@ -131,9 +131,9 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
         </fieldset>
       </form>
       <ul class="legal-links list list--plain">
-        <li><a href="https://www.mozilla.org/en-US/about/legal/">Legal</a></li>
-        <li><a href="https://www.mozilla.org/en-US/privacy/websites/">Privacy</a></li>
-        <li><a href="https://discourse.mozilla.org/c/iam">Need help?</a></li>
+        <li><a href="#">Voorwaarden</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Hulp nodig?</a></li>
       </ul>
     </div>
     <script src="../../dist/js/main.js" inline></script>

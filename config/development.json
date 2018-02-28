@@ -1,11 +1,11 @@
 {
-  "auth0_domain" : "ckc-zoetermeer.auth0.com",
-  "LDAP_connection_name" : "Mozilla-LDAP-Dev",
+  "auth0_domain" : "ckc-zoetermeer.eu.auth0.com",
+  "LDAP_connection_name" : "Personen",
   "person_api_domain" : "https://person-api.sso.allizom.org/v1/connection/",
   "GTM_ID": "GTM-T2N2BRW",
-  "client_ID": "CIynn5wTPyYZQcA1FJx1Io9z4t7QWDaE",
+  "client_ID": "issb6gM8V164SAyDOkAuezKFF9s0Pgah",
   "features": {
     "autologin": "true",
-    "person_api_lookup": "true"
+    "person_api_lookup": "false"
   }
 }

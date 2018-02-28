@@ -58,7 +58,7 @@ module.exports = function enter( element ) {
         });
     }
     else {
-      showNonLDAP( element );
+      showLDAP( element, passwordField );
     }
   }
 };

@@ -10,7 +10,7 @@ module.exports = {
   'enter': require( 'handlers/enter' ),
   'go-to-initial-page': require( 'handlers/go-to-initial-page' ),
   'authorise-ldap': require( 'handlers/authorise-ldap' ),
-  'authorise-github': require( 'handlers/authorise-github' ),
+  'authorise-facebook': require( 'handlers/authorise-facebook' ),
   'authorise-google': require( 'handlers/authorise-google' ),
   'send-passwordless-link': require( 'handlers/send-passwordless-link' )
 };

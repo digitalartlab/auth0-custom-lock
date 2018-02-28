@@ -3,9 +3,9 @@ var storeLastUsedConnection = require( 'helpers/storeLastUsedConnection' );
 
 module.exports = function authorise( element ) {
   var form = element.closest( 'form' );
-  var connection = 'github';
+  var connection = 'facebook';
 
-  fireGAEvent( 'Authorisation', 'Authorising with GitHub' );
+  fireGAEvent( 'Authorisation', 'Authorising with facebook' );
 
   form.webAuth.authorize({
     responseType: 'token',
