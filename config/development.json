@@ -11,5 +11,5 @@
     "autologin": "true",
     "person_api_lookup": "false"
   },
-  "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ]
+  "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ]
 }

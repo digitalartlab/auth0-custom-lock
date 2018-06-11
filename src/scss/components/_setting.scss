@@ -5,7 +5,7 @@
     left: -9999em;
 
     &:focus + label span {
-      border: 1px dotted;
+      border: 1px dotted $midGrey;
     }
   }
 
@@ -13,21 +13,8 @@
     margin: 0;
     display: inline-block;
     vertical-align: middle;
-  }
-
-  &__disabled-text {
-    display: inline;
-
-    input:checked + label & {
-      display: none;
-    }
-  }
-
-  &__enabled-text {
-    display: none;
-
-    input:checked + label & {
-      display: inline;
+    span {
+      border: 1px dotted transparent;
     }
   }
 
@@ -35,30 +22,34 @@
     width: 3em;
     height: 1.75em;
     border-radius: 1em;
-    background-color: $midGrey;
+    background-color: $lightGrey;
     display: inline-block;
     vertical-align: middle;
     margin-right: .5em;
     position: relative;
     border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1) inset;
 
     input:checked + label & {
-      background-color: $green;
+      background-color: $primaryColor;
     }
 
     &::after {
-      transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease;
       position: absolute;
-      width: 1.5em;
-      height: 1.5em;
+      width: 1.25em;
+      height: 1.25em;
       border-radius: 1em;
       content: '';
-      top: .05em;
-      left: 1.375em;
+      top: .2em;
+      left: .25em;
       background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
 
       input:checked + label & {
-        left: .125em;
+        left: 1.415em;
       }
     }
   }

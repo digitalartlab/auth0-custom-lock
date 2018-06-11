@@ -23,7 +23,7 @@ window.NLX = {
     'autologin': '{{{ features.autologin }}}',
     'person_api_lookup': '{{{ features.person_api_lookup }}}'
   },
-  'supportedLoginMethods': [ 'github', 'google-oauth2', 'firefoxaccounts', 'email' ]
+  'supportedLoginMethods': [ 'twitter', 'facebook', 'google-oauth2', 'email' ]
 };
 
 // run all decorators on page load

@@ -1,7 +1,7 @@
 .login-options {
 
   li {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 
     &:last-child {
       margin-bottom: 0;
@@ -11,8 +11,4 @@
   + a {
     margin-top: 1em;
   }
-}
-
-.login-options--empty + hr {
-  display: none;
 }

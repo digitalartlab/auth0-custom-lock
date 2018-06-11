@@ -21,25 +21,26 @@ input[type="email"],
 input[type="password"] {
   font-size: 100%;
   background-color: $lightGrey;
-  border: 2px solid $white;
-  border-bottom: 2px solid $black;
-  padding: .5em;
+  border: 0;
+  padding: 10px;
   display: block;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   -webkit-appearance: none;
   border-radius: $cardRadius;
-  transition: border-color .2s ease;
+  transition: all .2s ease;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05) inset, 0 3px 12px rgba(0,0,0,.02) inset;
+  line-height: 1.4;
+  border: 2px solid $midGrey;
 
   &:hover,
   &:focus {
-    border: 2px solid $blue;
     outline: none;
+    background-color: $white;
+    border-color: $primaryColor;
+    box-shadow: 0 1px 6px rgba(0,0,0,.1) inset, 0 3px 12px rgba(0,0,0,.05) inset;
   }
 
-  &:focus {
-    background-color: $white;
-  }
 }
 
 .form__input {
@@ -52,18 +53,10 @@ input[type="password"] {
   label {
     margin: 0;
     position: absolute;
-    top: .5em;
-    left: .5em;
-    transition: 0.2s all ease;
-  }
-
-  input:focus + label,
-  input.has-contents + label {
-    position: absolute;
     top: -1.5em;
-    color: $blue;
+    left: 10px;
+    color: $primaryColor;
     font-weight: bold;
-
     > span {
       font-size: 0.75em;
     }

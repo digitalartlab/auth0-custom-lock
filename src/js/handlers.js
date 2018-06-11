@@ -12,6 +12,7 @@ module.exports = {
   'authorise-ldap': require( 'handlers/authorise-ldap' ),
   'authorise-google': require( 'handlers/authorise-google' ),
   'authorise-facebook': require( 'handlers/authorise-facebook' ),
+  'authorise-twitter': require( 'handlers/authorise-twitter' ),
   'send-passwordless-link': require( 'handlers/send-passwordless-link' )
 };
 

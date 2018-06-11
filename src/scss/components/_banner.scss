@@ -1,7 +1,6 @@
 .banner {
-  background: $black;
-  color: $white;
-  border-bottom: 1px solid $white;
+  background: #333;
+  color: $midGrey;
   padding: 1.5em;
   text-align: center;
   margin: -1em -1.5em 2em;
@@ -27,14 +26,15 @@
     background-color: rgba( $white, .2 );
     color: $white;
     text-decoration: none;
-    border-radius: 1.25em;
+    border-radius: $cardRadius;
     font-weight: bold;
     padding: .25em 1em;
     margin: 1em 0 0 1em;
     text-transform: uppercase;
+    font-size: 75%;
 
     @media ( min-width: 40em ) {
-      margin: .5em 0 .5em 1em;
+      margin: -.2em 0 0 1em;
       display: inline-block;
       vertical-align: middle;
     }
@@ -47,9 +47,9 @@
     &:focus {
       outline: none;
       outline: 0;
-      background-color: $lightGrey;
-      border-color: $lightGrey;
-      color: $blue;
+      background-color: $white;
+      border-color: $white;
+      color: $black;
     }
   }
 }

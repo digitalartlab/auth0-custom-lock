@@ -9,6 +9,12 @@ function showNonLDAP( element ) {
 }
 
 function showLDAP( element, passwordField ) {
+  var email = document.getElementById( 'field-email' ).value.toLowerCase();
+  var emailConfirmation = document.getElementById( 'field-email-confirmation' );
+
+  // set email reminder field
+  emailConfirmation.value = email;
+
   // show password field
   ui.setLockState( element, 'ldap' );
   // focus password field

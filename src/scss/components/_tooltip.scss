@@ -1,14 +1,14 @@
 .link-to-tooltip {
-  color: $darkerGrey;
+  color: $midGrey;
   float: right;
   font-size: 1.2em;
 
   svg path {
-    fill: $darkerGrey;
+    fill: $midGrey;
   }
 
   &:hover svg path {
-    fill: $blue;
+    fill: $darkerGrey;
   }
 
   .icon {
@@ -19,10 +19,12 @@
 
 .tooltip {
   display: none;
-  border: 1px solid $midGrey;
   background-color: $lightGrey;
   padding: 1em;
   margin: 1em 0;
+  font-size: 75%;
+  border-radius: $cardRadius;
+  box-shadow: 0 2px 8px rgba($black,.1) inset;
 
   p:last-child {
     margin-bottom: 0;
