@@ -1,4 +1,4 @@
-var fireGAEvent = require( 'helpers/fireGAEvent' );
+var fireGAEvent = require( 'helpers/fire-ga-event' );
 var ui = require( 'helpers/ui' );
 
 module.exports = function authorise( element ) {
@@ -18,7 +18,7 @@ module.exports = function authorise( element ) {
     email: emailField.value
   }, function( error, response ) {
     if ( error ) {
-      if ( error.code === 'bad.email' || error.code === 'invalid_parameter' ) {
+      if ( error.code === 'bad.email' || error.code === 'invalid_parameter' || error.code === 'bad.connection' ) {
         errorText.lastElementChild.textContent = error.description;
         ui.setLockState( element, 'error-passwordless' );
         fireGAEvent( 'Error', 'Passwordless: email address invalid' );

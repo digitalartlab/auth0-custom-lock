@@ -1,15 +1,20 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   background: $backgroundColor;
   color: $darkerGrey;
-  font-family: "Open Sans", sans-serif;
+  font-family: "aktiv-grotesk", sans-serif;
   letter-spacing: 0.03em;
-  padding: 0;
   margin: 0 1.5em;
+  padding: 1em 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
 
-  @media ( min-height: 50em ) and ( min-width: 40em ) {
-    display: flex;
-    height: calc(100vh - 6em);
-    padding: 10em 1em;
+  @media ( min-width: 50em ) {
+    padding: 3em 0;
   }
 }
 
@@ -18,10 +23,9 @@ body {
 }
 
 [data-hidden] {
-  /* position: absolute;
+  position: absolute;
+  top: -999em;
   opacity: 0;
-  top:0; */
-  display: none;
 }
 
 h1 {
@@ -35,7 +39,7 @@ a {
   &:hover {
     color: $black;
     text-decoration: underline;
-    text-decoration-skip-ink: auto;
+    text-decoration-skip: ink;
   }
 
 }
@@ -54,4 +58,10 @@ hr {
 .visually-hidden {
   position: absolute;
   left: -9999em;
+}
+
+.non-ldap-options-intro {
+  padding-top: 2em;
+  border-top: 2px solid $lightGrey;
+  margin-top: 2em;
 }

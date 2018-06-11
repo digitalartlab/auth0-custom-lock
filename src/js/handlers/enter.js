@@ -1,5 +1,6 @@
 var ui = require( 'helpers/ui' );
-var fireGAEvent = require( 'helpers/fireGAEvent' );
+var fireGAEvent = require( 'helpers/fire-ga-event' );
+var accountLinking = require( 'helpers//account-linking' );
 
 function showNonLDAP( element ) {
   // show social logins + passwordless
@@ -7,25 +8,26 @@ function showNonLDAP( element ) {
   fireGAEvent( 'Screen change', 'Continued as non-LDAP' );
 }
 
-function showLDAP( element, passwordField, emailFieldValue ) {
-  var repeatEmailField = document.getElementById( 'email-repeat' );
-
+function showLDAP( element, passwordField ) {
   // show password field
   ui.setLockState( element, 'ldap' );
   // focus password field
   setTimeout( function() {
     passwordField.focus();
-    repeatEmailField.value = emailFieldValue;
   }, 400 );
 
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
 }
 
 module.exports = function enter( element ) {
+  var form = document.querySelector( 'form' );
   var emailField = document.getElementById( 'field-email' );
+  var emailFieldValue = emailField.value.toLowerCase();
   var passwordField = document.getElementById( 'field-password' );
-  var accountLinking = window.location.toString().indexOf( 'account_linking=true' ) >= 0;
-  var qualifiesForLDAPShortcut = /mozilla.com|getpocket.com|mozillafoundation.org$/.test( emailField.value );
+  var isAccountLinking = accountLinking.isAccountLinking();
+  var qualifiesForLDAPShortcut = /ckc-zoetermeer.nl$/.test( emailField.value );
+  var supportedByRP = form.loginMethods ? form.loginMethods['supportedByRP'] : null;
+  var onlyAcceptsLDAP = supportedByRP && supportedByRP.length === 1 && supportedByRP.indexOf( NLX.LDAP_connection_name ) === 0;
   var ENDPOINT = NLX.person_api_domain;
 
   if ( emailField.value === '' || emailField.validity.valid === false ) {
@@ -33,15 +35,15 @@ module.exports = function enter( element ) {
     return;
   }
 
-  if ( qualifiesForLDAPShortcut && accountLinking === false ) {
+  if ( qualifiesForLDAPShortcut && isAccountLinking === false ) {
     showLDAP( element, passwordField );
   }
   else {
-    if ( NLX.features.person_api_lookup === 'true' ) {
+    if ( NLX.features.person_api_lookup ) {
 
       ui.setLockState( element, 'loading' );
 
-      fetch( ENDPOINT + emailField.value )
+      fetch( ENDPOINT + emailFieldValue )
         .then(
           function( response ) {
             response.json().then( function( data ) {
@@ -49,19 +51,34 @@ module.exports = function enter( element ) {
               var isLDAP = userinfo.hasOwnProperty( 'user_email' ) && userinfo.hasOwnProperty( 'connection_method' ) && userinfo[ 'connection_method' ] === 'ad';
 
               if ( isLDAP ) {
-                showLDAP( element, passwordField, emailField.value );
+                showLDAP( element, passwordField );
               }
               else {
-                showNonLDAP( element );
+                if ( onlyAcceptsLDAP ) {
+                  ui.setLockState( element, 'ldap-required' );
+                }
+                else {
+                  showNonLDAP( element );
+                }
               }
             });
           }
-        ).catch( function() {
+      ).catch( function() {
+        if ( onlyAcceptsLDAP ) {
+          ui.setLockState( element, 'ldap-required' );
+        }
+        else {
           showNonLDAP( element );
-        });
+        }
+      });
     }
     else {
-      showLDAP( element, passwordField, emailField.value );
+      if ( onlyAcceptsLDAP ) {
+        ui.setLockState( element, 'ldap-required' );
+      }
+      else {
+        showNonLDAP( element );
+      }
     }
   }
 };

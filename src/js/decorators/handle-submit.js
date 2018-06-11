@@ -1,4 +1,5 @@
 var authoriseLDAP = require( 'handlers/authorise-ldap' );
+var enter = require( 'handlers/enter' );
 
 module.exports = function( element ) {
 
@@ -10,7 +11,7 @@ module.exports = function( element ) {
 
     switch ( currentState ) {
     case 'initial':
-      authoriseLDAP( element, secondTry );
+      enter( element );
       break;
     case 'ldap':
       authoriseLDAP( element, secondTry );

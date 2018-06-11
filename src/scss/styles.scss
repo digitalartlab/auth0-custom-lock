@@ -1,6 +1,6 @@
-$lightGrey: #f4f4f4;
+$lightGrey: #fafafa;
 $midGrey: #e5e5e5;
-$darkerGrey: #595959;
+$darkerGrey: #999;
 $white: #fff;
 $black: #000;
 $backgroundColor: $lightGrey;
@@ -10,6 +10,9 @@ $yellow: #fff44f;
 $darkYellow: #faba00;
 $green: #158640;
 $red: #ff4f5e;
+
+$cardShadow: 0 13px 28px #e9e9e9;
+$cardRadius: 4px;
 
 * {
   box-sizing: border-box;
@@ -28,4 +31,5 @@ $red: #ff4f5e;
 @import 'components/login-options';
 @import 'components/logo';
 @import 'components/rp-name';
-
+@import 'components/setting';
+@import 'components/tooltip';

@@ -6,11 +6,14 @@ var polyfill = require( 'polyfills/polyfill' );
 
 window.Promise = require( 'promise-polyfill' );
 require( 'whatwg-fetch' );
+require( 'url-search-params-polyfill' );
+polyfill();
 
 document.documentElement.className = 'has-js';
 
 // environment variables are replaced in build process
 window.NLX = {
+  'environment': '{{{ environment }}}',
   'auth0_domain': '{{{ auth0_domain }}}',
   'client_ID': '{{{ client_ID }}}',
   'LDAP_connection_name': '{{{ LDAP_connection_name }}}',
@@ -19,10 +22,9 @@ window.NLX = {
   'features': {
     'autologin': '{{{ features.autologin }}}',
     'person_api_lookup': '{{{ features.person_api_lookup }}}'
-  }
+  },
+  'supportedLoginMethods': [ 'github', 'google-oauth2', 'firefoxaccounts', 'email' ]
 };
-
-polyfill();
 
 // run all decorators on page load
 decorate( decorators );

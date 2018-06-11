@@ -1,4 +1,4 @@
-var checkDntEnabled = require( 'helpers/dntEnabled' );
+var checkDntEnabled = require( 'helpers/dnt-enabled' );
 var dntEnabled = checkDntEnabled();
 
 module.exports = function() {
@@ -6,7 +6,7 @@ module.exports = function() {
   var scriptTag;
 
   if ( dntEnabled === false ) {
-    firstScriptTag = document.getElementsByTagName( 'script' )[0];
+    /* firstScriptTag = document.getElementsByTagName( 'script' )[0];
     scriptTag = document.createElement( 'script' );
 
     window.dataLayer = window.dataLayer || [];
@@ -16,8 +16,8 @@ module.exports = function() {
     });
 
     scriptTag.async = true;
-    // scriptTag.src = 'https://www.googletagmanager.com/gtm.js?id=' + NLX.GTM_ID;
+    scriptTag.src = 'https://www.googletagmanager.com/gtm.js?id=' + NLX.GTM_ID;
 
-    firstScriptTag.parentNode.insertBefore( scriptTag, firstScriptTag );
+    firstScriptTag.parentNode.insertBefore( scriptTag, firstScriptTag ); */
   }
 };

@@ -1,10 +1,14 @@
 {
-  "auth0_domain" : "ckc-zoetermeer.eu.auth0.com",
-  "LDAP_connection_name" : "Personen",
-  "person_api_domain" : "https://person-api.sso.mozilla.com/v1/connection/",
-  "GTM_ID": "GTM-T2N2BRW",
+  "environment": "PROD",
+  "auth0_domain": "auth.digitalartlab.nl",
+  "LDAP_connection_name": "Personen",
+  "person_api_domain": "https://localhost",
+  "logout_url": "https://localhost",
+  "sso_dashboard_url": "https://account.digitalartlab.nl",
+  "GTM_ID": "",
   "features": {
     "autologin": "true",
-    "person_api_lookup": "false"
-  }
+    "person_api_lookup": "true"
+  },
+  "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ]
 }
