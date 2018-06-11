@@ -41,6 +41,22 @@
     border-color: $black;
   }
 
+  &--primary {
+    background: rgb(235,85,130);
+    box-shadow: 0 2px 10px rgba(235,85,130,.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: .2s all ease;
+    &:hover, &:focus, &:active {
+      background: rgb(235,85,130);
+      border-color: transparent;
+      transform: scale(1.1);
+      box-shadow: 0 5px 20px rgba(235,85,130,1);
+      transition-duration: 1s;
+      color: #fff;
+    }
+  }
+
   &--full-width {
     width: 100%;
   }
