@@ -39,26 +39,67 @@ input[type="password"] {
     border-color: $primaryColor;
   }
 
+  &:disabled {
+    border-color: $lightGrey;
+    color: $darkerGrey;
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $darkerGrey !important;
+      background-color: $white !important;
+      -webkit-box-shadow: 0 0 0 46px $white inset;
+    }
+  }  
+
 }
 
 .form__password {
-  height: 39px;
-  margin-top: 24px;
+  height: 62px;
+  margin-top: 0;
   transform-origin: 50% 0;
-  -ms-transform-origin: 50% 0;
-  -webkit-transform-origin: 50% 0;
   transition-property: visibility, height, margin-top, opacity, -ms-transform, -webkit-transform, transform;
-  -webkit-transition-property: visibility, height, margin-top, opacity, -webkit-transform, transform;
-  transition-duration: 0s, 0.2s, 0.2s, 0.2s;
-  -webkit-transition-duration: 0s, 0.2s, 0.2s, 0.2s;
-  transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
+  transition-duration: 0s, 0.2s, 0.3s, 0.4s;
+  transition-timing-function: ease;
   &--hidden {
     height: 0;
     margin-top: 0;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+  }
+}
+.form__email {
+  svg {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+    width: 16px;
+    transition-property: visibility, opacity;
+    transition-duration: 0s, .2s;
+    transition-delay: .2s, 0s;
+    path, polygon {
+      fill: $darkerGrey;
+      transition: fill .2s ease;
+    }
+  }
+  &--locked {
+    input {
+      cursor: pointer;
+    }
+    svg {
+      visibility: visible;
+      opacity: 1;
+      transition-delay: 0s, 0s;
+    }
+  }
+  .target:hover, .target:focus {
+    + svg {
+      path, polygon {
+        fill: $black;
+      }
+    }
   }
 }
 
@@ -81,5 +122,22 @@ input[type="password"] {
     > span {
       font-size: 0.75em;
     }
+  }
+  input:disabled + label {
+    color: $midGrey;
+  }
+}
+
+.target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+  &--show {
+    display: block;
   }
 }

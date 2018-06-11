@@ -51,7 +51,7 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
     <div class="card">
       <a href="https://mozilla.org" class="logo" target="_blank"><img alt="CKC &amp; partners" src="../images/ckc-logo.svg" inline /></a>
       <noscript><p>Het loginscherm van CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
-      <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
+      <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial" id="form">
         <fieldset data-decorator="decide-screen">
           <legend class="rp-name"><span class="visually-hidden">Log in op </span><span id="rp-name-placeholder" class="rp-name__text">glab.digitalartlab.nl</span></legend>
           <div id="loading" class="loading" data-screen data-hidden aria-hidden inert>
@@ -60,9 +60,11 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
             <p role="alert" id="loading__status" class="loading__status"></p>
           </div>
           <div id="initial" data-screen data-hidden aria-hidden>
-            <div class="form__input">
+            <div class="form__input form__email" id="field-email__container">
               <input type="email" name="username" id="field-email" autocomplete="username email" autofocus data-decorator="watch-contents" />
               <label for="field-email"><span>E-mail</span></label>
+              <div class="target" id="field-email__target"></div>
+              <img src="../images/edit.svg" alt="Bewerken" id="field-email__icon" inline>
             </div>
             <div class="form__input form__password form__password--hidden" id="field-password__container">
                 <input type="password" id="field-password" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials"  />
@@ -144,9 +146,6 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
           <div id="error-password" data-screen data-hidden aria-hidden inert>
             <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="../images/circled-x.svg" class="card__heading-icon" inline /> <span>Error</span></h2>
             <p>Please attempt again or contact the Help Desk for assistance.</p>
-            <div class="form__input">
-            </div>
-            <input type="submit" class="button button--full-width" id="authorise-ldap-credentials-try-2" value="Log in met e-mail" />
             <hr>
             <button type="button" class="button button--text-only card__back button--unpadded" data-handler="go-to-initial-page">Need to log in with a different account?</button>
           </div>

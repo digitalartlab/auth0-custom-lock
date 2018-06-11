@@ -79,7 +79,9 @@ module.exports = function( element ) {
       ui.setLockState( element, 'initial' );
     }
   }).catch( function() {
-    // Could not check which connections are available for this RP; just show all.
-    ui.setLockState( element, 'initial' );
+    setTimeout( function() {
+      // Could not check which connections are available for this RP; just show all.
+      ui.setLockState( element, 'initial' );
+    }, 1000 );
   });
 };
