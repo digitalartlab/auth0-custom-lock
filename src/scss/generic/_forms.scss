@@ -20,16 +20,15 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   font-size: 100%;
-  background-color: $lightGrey;
+  background-color: $white;
   border: 0;
   padding: 10px;
   display: block;
   width: 100%;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
   -webkit-appearance: none;
   border-radius: $cardRadius;
-  transition: all .2s ease;
-  box-shadow: 0 1px 6px rgba(0,0,0,.05) inset, 0 3px 12px rgba(0,0,0,.02) inset;
+  transition: border-color .2s ease;
   line-height: 1.4;
   border: 2px solid $midGrey;
 
@@ -38,9 +37,29 @@ input[type="password"] {
     outline: none;
     background-color: $white;
     border-color: $primaryColor;
-    box-shadow: 0 1px 6px rgba(0,0,0,.1) inset, 0 3px 12px rgba(0,0,0,.05) inset;
   }
 
+}
+
+.form__password {
+  height: 39px;
+  margin-top: 24px;
+  transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -webkit-transform-origin: 50% 0;
+  transition-property: visibility, height, margin-top, opacity, -ms-transform, -webkit-transform, transform;
+  -webkit-transition-property: visibility, height, margin-top, opacity, -webkit-transform, transform;
+  transition-duration: 0s, 0.2s, 0.2s, 0.2s;
+  -webkit-transition-duration: 0s, 0.2s, 0.2s, 0.2s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  &--hidden {
+    height: 0;
+    margin-top: 0;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
 }
 
 .form__input {
@@ -53,10 +72,12 @@ input[type="password"] {
   label {
     margin: 0;
     position: absolute;
-    top: -1.5em;
+    top: -.75em;
     left: 10px;
     color: $primaryColor;
+    background: $white;
     font-weight: bold;
+    padding: 0 2px;
     > span {
       font-size: 0.75em;
     }
