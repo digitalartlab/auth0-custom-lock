@@ -15,6 +15,7 @@ document.documentElement.className = 'has-js';
 window.NLX = {
   'environment': '{{{ environment }}}',
   'auth0_domain': '{{{ auth0_domain }}}',
+  'auth0_tenant': '{{{ auth0_tenant }}}',
   'client_ID': '{{{ client_ID }}}',
   'LDAP_connection_name': '{{{ LDAP_connection_name }}}',
   'person_api_domain': '{{{ person_api_domain }}}',
