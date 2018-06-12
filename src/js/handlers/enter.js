@@ -55,7 +55,7 @@ module.exports = function enter( element ) {
   var emailFieldValue = emailField.value.toLowerCase();
   var passwordField = document.getElementById( 'field-password' );
   var isAccountLinking = accountLinking.isAccountLinking();
-  var qualifiesForLDAPShortcut = /ckc-zoetermeer.nl|wingpictures.nl|digitalartlab.nl$/.test( emailField.value );
+  var qualifiesForLDAPShortcut = /ckc-zoetermeer.nl|wingpictures.nl|digitalartlab.nl|unicoz.nl|opoz.nl|cultuuropschool.nl$/.test( emailField.value );
   var supportedByRP = form.loginMethods ? form.loginMethods['supportedByRP'] : null;
   var onlyAcceptsLDAP = supportedByRP && supportedByRP.length === 1 && supportedByRP.indexOf( NLX.LDAP_connection_name ) === 0;
   var ENDPOINT = NLX.person_api_domain;
@@ -93,14 +93,14 @@ module.exports = function enter( element ) {
               }
             });
           }
-      ).catch( function() {
-        if ( onlyAcceptsLDAP ) {
-          ui.setLockState( element, 'ldap-required' );
-        }
-        else {
-          showNonLDAP( element );
-        }
-      });
+        ).catch( function() {
+          if ( onlyAcceptsLDAP ) {
+            ui.setLockState( element, 'ldap-required' );
+          }
+          else {
+            showNonLDAP( element );
+          }
+        });
     }
     else {
       if ( onlyAcceptsLDAP ) {
