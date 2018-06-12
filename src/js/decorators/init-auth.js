@@ -9,6 +9,10 @@ function getConfig( string ) {
     config.clientID = hostedConfig.clientID;
     config.redirectUri = hostedConfig.callbackURL;
     config.responseType = 'code';
+    config.overrides = {
+      __tenant: hostedConfig.auth0Tenant,
+      __token_issuer: hostedConfig.auth0Domain
+    },
     config = Object.assign( config, hostedConfig.internalOptions );
   }
   else {
