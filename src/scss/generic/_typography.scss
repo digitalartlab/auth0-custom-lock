@@ -8,13 +8,13 @@ body {
   color: $darkerGrey;
   font-family: "aktiv-grotesk", sans-serif;
   letter-spacing: 0.03em;
-  margin: 0 1.5em;
-  padding: 1em 0;
+  margin: 0 1em;
+  padding: .5em 0;
   display: grid;
   grid-template-rows: auto 1fr;
 
-  @media ( min-width: 50em ) {
-    padding: 3em 0;
+  @media ( min-width: 30em ) {
+    margin: 0 1.5em;
   }
 }
 
@@ -22,18 +22,12 @@ body {
   display: none;
 }
 
-[data-hidden] {
-  position: absolute;
-  top: -999em;
-  opacity: 0;
-}
-
 h1 {
   margin: 0;
 }
 
 a {
-  color: $blue;
+  color: $primaryColor;
   text-decoration: none;
 
   &:hover {

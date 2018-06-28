@@ -18,7 +18,7 @@ module.exports = function authorise( element ) {
     email: emailField.value
   }, function( error, response ) {
     if ( error ) {
-      if ( error.code === 'bad.email' || error.code === 'invalid_parameter' || error.code === 'bad.connection' ) {
+      if ( error.code === 'bad.email' || error.code === 'invalid_parameter' ) {
         errorText.lastElementChild.textContent = error.description;
         ui.setLockState( element, 'error-passwordless' );
         fireGAEvent( 'Error', 'Passwordless: email address invalid' );

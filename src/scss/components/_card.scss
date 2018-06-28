@@ -1,15 +1,15 @@
 .card {
   background-color: $white;
-  padding: 2.5em;
+  padding: 2em;
   position: relative;
-  margin: auto 1em;
+  margin: auto;
+  width: 100%;
+  max-width: 26em;
   box-shadow: $cardShadow;
   border-radius: $cardRadius;
 
-  @media ( min-width: 20em ) {
-    margin: auto;
-    width: 100%;
-    max-width: 26em;
+  @media ( min-width: 30em ) {
+    padding: 2.5em;
   }
 
   @supports ( display: grid ) {
@@ -27,16 +27,16 @@
   &__heading {
     font-size: 1.4em;
     font-weight: 400;
-    text-transform: capitalize;
     padding-left: 2.125em;
     position: relative;
     min-height: 1.5em;
+    margin-top: 0;
 
     &--iconless {
       padding-left: 0;
     }
 
-    svg {
+    img {
       width: 1.5em;
       height: 1.5em;
       position: absolute;
@@ -46,20 +46,10 @@
 
     &--success {
       color: $green;
-
-      svg use,
-      svg path {
-        fill: $green;
-      }
     }
 
     &--error {
       color: $red;
-
-      svg use,
-      svg path {
-        fill: $red;
-      }
     }
   }
 

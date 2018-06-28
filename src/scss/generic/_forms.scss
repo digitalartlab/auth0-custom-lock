@@ -11,6 +11,16 @@ fieldset {
   padding: 0;
 }
 
+fieldset.hidden-lastpass-password-offset {
+  margin-bottom: -4em;
+}
+
+#hidden-lastpass-password {
+  height: 3em;
+  position: relative;
+  z-index: -999;
+}
+
 label {
   margin: 2em 0;
   display: block;
@@ -21,7 +31,6 @@ input[type="email"],
 input[type="password"] {
   font-size: 100%;
   background-color: $white;
-  border: 0;
   padding: 10px;
   display: block;
   width: 100%;
@@ -39,67 +48,8 @@ input[type="password"] {
     border-color: $primaryColor;
   }
 
-  &:disabled {
-    border-color: $lightGrey;
-    color: $darkerGrey;
-    &:-webkit-autofill {
-      -webkit-text-fill-color: $darkerGrey !important;
-      background-color: $white !important;
-      -webkit-box-shadow: 0 0 0 46px $white inset;
-    }
-  }  
-
-}
-
-.form__password {
-  height: 62px;
-  margin-top: 0;
-  transform-origin: 50% 0;
-  transition-property: visibility, height, margin-top, opacity, -ms-transform, -webkit-transform, transform;
-  transition-duration: 0s, 0.2s, 0.3s, 0.4s;
-  transition-timing-function: ease;
-  &--hidden {
-    height: 0;
-    margin-top: 0;
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-  }
-}
-.form__email {
-  svg {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    opacity: 0;
-    visibility: hidden;
-    opacity: 0;
-    display: block;
-    width: 16px;
-    transition-property: visibility, opacity;
-    transition-duration: 0s, .2s;
-    transition-delay: .2s, 0s;
-    path, polygon {
-      fill: $darkerGrey;
-      transition: fill .2s ease;
-    }
-  }
-  &--locked {
-    input {
-      cursor: pointer;
-    }
-    svg {
-      visibility: visible;
-      opacity: 1;
-      transition-delay: 0s, 0s;
-    }
-  }
-  .target:hover, .target:focus {
-    + svg {
-      path, polygon {
-        fill: $black;
-      }
-    }
+  &:focus {
+    background-color: $white;
   }
 }
 
@@ -113,31 +63,15 @@ input[type="password"] {
   label {
     margin: 0;
     position: absolute;
-    top: -.75em;
-    left: 10px;
-    color: $primaryColor;
+    top: -0.65em;
+    left: .65em;
+    padding: 0 4px;
     background: $white;
+    color: $primaryColor;
     font-weight: bold;
-    padding: 0 2px;
-    > span {
-      font-size: 0.75em;
-    }
+    font-size: .75em;
   }
-  input:disabled + label {
-    color: $midGrey;
-  }
-}
-
-.target {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 2;
-  display: none;
-  &--show {
-    display: block;
+  &:first-child {
+    margin-top: 1em;
   }
 }

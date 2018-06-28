@@ -5,7 +5,7 @@
     left: -9999em;
 
     &:focus + label span {
-      border: 1px dotted $midGrey;
+      border: 1px dotted;
     }
   }
 
@@ -13,8 +13,21 @@
     margin: 0;
     display: inline-block;
     vertical-align: middle;
-    span {
-      border: 1px dotted transparent;
+  }
+
+  &__disabled-text {
+    display: inline;
+
+    input:checked + label & {
+      display: none;
+    }
+  }
+
+  &__enabled-text {
+    display: none;
+
+    input:checked + label & {
+      display: inline;
     }
   }
 
@@ -53,5 +66,4 @@
       }
     }
   }
-
 }

@@ -12,3 +12,8 @@
     margin-top: 1em;
   }
 }
+
+.login-options--empty + hr,
+.login-options--empty + div > hr {
+  display: none;
+}

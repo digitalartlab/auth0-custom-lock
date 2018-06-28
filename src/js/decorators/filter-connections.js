@@ -6,9 +6,10 @@ var applyEmptyClass = require( 'helpers/apply-empty-class' );
 
 module.exports = function( element ) {
   var form = element.form;
-  var url = 'https://' + NLX.auth0_domain + '/public/api/' + form.webAuthConfig.clientID + '/connections';
+  var url = 'https://' + NLX.domain + '/public/api/' + form.webAuthConfig.clientID + '/connections';
   var requiresPrompt = window.location.href.indexOf( 'prompt=login' ) >= 0 || window.location.href.indexOf( 'prompt=select_account' );
   var triedAutologin = window.location.href.indexOf( 'tried_autologin=true' ) >= 0;
+  var usedBackButton = window.performance && window.performance.navigation.type === 2;
   var autologinEnabled = requiresPrompt === -1 && NLX.features.autologin === 'true';
   var savedLoginMethod = window.localStorage.getItem( 'nlx-last-used-connection' );
   var accountLinking = require( 'helpers/account-linking' );
@@ -26,7 +27,7 @@ module.exports = function( element ) {
 
     loginMethods = {
       'supportedByRP': [],
-      'supportedByNLX': NLX.supportedLoginMethods,
+      'supportedByNLX': NLX.supportedLoginMethods.split( ',' ),
       'removed': []
     };
 
@@ -55,7 +56,7 @@ module.exports = function( element ) {
       // RPs that request autologin to happen with the prompt=none parameter,
       // will not see this page. As a fallback for RPs that don't use prompt=none,
       // we attempt autologin once, and only under circumstances
-      if ( !didAccountLinking && !triedAutologin && autologinEnabled && rpSupportsSavedLoginMethod ) {
+      if ( !didAccountLinking && !triedAutologin && !usedBackButton && autologinEnabled && rpSupportsSavedLoginMethod ) {
         autologin( savedLoginMethod, form );
         return;
       }
@@ -79,9 +80,7 @@ module.exports = function( element ) {
       ui.setLockState( element, 'initial' );
     }
   }).catch( function() {
-    setTimeout( function() {
-      // Could not check which connections are available for this RP; just show all.
-      ui.setLockState( element, 'initial' );
-    }, 1000 );
+    // Could not check which connections are available for this RP; just show all.
+    ui.setLockState( element, 'initial' );
   });
 };

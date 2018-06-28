@@ -22,12 +22,12 @@
 
   a {
     text-decoration: none;
-    color: $black;
+    color: $darkerGrey;
     border-radius: 1.25em;
     padding: .5em 1em;
 
     &:hover {
-      color: $blue;
+      color: $black;
       text-decoration: underline;
       text-decoration-skip: ink;
     }
@@ -35,7 +35,7 @@
     &:focus {
       outline: none;
       text-decoration: none;
-      box-shadow: 0 0 0 1px $blue;
+      box-shadow: 0 0 0 1px $primaryColor;
     }
 
     &:active {

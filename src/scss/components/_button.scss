@@ -41,17 +41,17 @@
   }
 
   &--secondary {
-    border-color: $white;
+    border-color: $midGrey;
     background-color: $white;
     color: $darkerGrey;
     text-transform: none;
-    box-shadow: 0 1px 5px rgba(0,0,0,.03), 0 4px 15px rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05), 0 4px 15px rgba(0,0,0,.02);
 
     &:hover, &:active, &:focus {
       background-color: transparent;
       color: $black;
       border-color: $black;
-      box-shadow: 0 1px 5px rgba(0,0,0,.03), 0 4px 15px rgba(0,0,0,.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,.05), 0 4px 15px rgba(0,0,0,.1);
     }
   }
 
@@ -69,18 +69,16 @@
     background-color: transparent;
     text-transform: none;
     border: 1px solid transparent;
-    color: $blue;
-    text-align: left;
+    color: $darkerGrey;
+    text-align: center;
     font-weight: normal;
     padding: .5em 1em;
     box-shadow: 0 0 0 transparent !important;
 
     &:hover {
       background-color: transparent;
-      color: $darkerGrey;
+      color: $black;
       border-color: transparent;
-      text-decoration: underline;
-      text-decoration-skip: ink;
     }
 
     &:focus {
@@ -88,7 +86,7 @@
       outline: 0;
       background-color: $lightGrey;
       border-color: $lightGrey;
-      color: $blue;
+      color: $black;
     }
 
     &:active {

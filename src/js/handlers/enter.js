@@ -9,44 +9,14 @@ function showNonLDAP( element ) {
 }
 
 function showLDAP( element, passwordField ) {
-  var form = document.getElementById( 'form' );
-  var email = document.getElementById( 'field-email' );
-  var emailContainer = document.getElementById( 'field-email__container' );
-  var emailTarget = document.getElementById( 'field-email__target' );
-  var passwordContainer = document.getElementById( 'field-password__container' );
-
-  // set email reminder field
-  form.setAttribute( 'lock-state', 'ldap' );
-  email.disabled = true;
-  emailContainer.classList.add( 'form__email--locked' );
-  emailTarget.dataset.handler = 'go-to-initial-page';
-  emailTarget.classList.add( 'target--show' );
-  passwordContainer.classList.remove( 'form__password--hidden' );
-
   // show password field
-  // ui.setLockState( element, 'ldap' );
+  ui.setLockState( element, 'ldap' );
   // focus password field
   setTimeout( function() {
     passwordField.focus();
   }, 400 );
 
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
-
-  emailTarget.addEventListener( 'click', function( event ) {
-    event.preventDefault();
-
-    form.setAttribute( 'lock-state', 'initial' );
-    email.disabled = false;
-    delete emailTarget.dataset.handler;
-    emailTarget.classList.remove( 'target--show' );
-    emailContainer.classList.remove( 'form__email--locked' );
-    passwordContainer.classList.add( 'form__password--hidden' );
-    setTimeout( function() {
-      email.focus();
-    }, 400 );
-    fireGAEvent( 'Screen change', 'Back to initial screen' );
-  });
-
 }
 
 module.exports = function enter( element ) {
@@ -93,14 +63,14 @@ module.exports = function enter( element ) {
               }
             });
           }
-        ).catch( function() {
-          if ( onlyAcceptsLDAP ) {
-            ui.setLockState( element, 'ldap-required' );
-          }
-          else {
-            showNonLDAP( element );
-          }
-        });
+      ).catch( function() {
+        if ( onlyAcceptsLDAP ) {
+          ui.setLockState( element, 'ldap-required' );
+        }
+        else {
+          showNonLDAP( element );
+        }
+      });
     }
     else {
       if ( onlyAcceptsLDAP ) {
