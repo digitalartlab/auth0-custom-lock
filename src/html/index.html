@@ -28,23 +28,22 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
 <!DOCTYPE html>
 <html lang="nl">
   <head>
-    <title>Login - CKC &amp; partners</title>
+    <title>Inloggen - CKC &amp; partners</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta http-equiv="Content-Security-Policy" content="{{{ csp }}}"> -->
     <link rel="dns-prefetch" href="{{{ person_api_domain }}}">
     <link rel="stylesheet" href="https://use.typekit.net/zrw6ubz.css" type="text/css" />
     <link rel="stylesheet" href="{{{ cdn }}}/css/styles.css" type="text/css" />
     <link rel="icon" href="{{{ cdn }}}/images/favicon.png" type="image/png" sizes="196x196" />
-  </head> 
+  </head>
   <body data-decorator="load-ga display-rp-name prevent-clickjack">
-    <!--
     <div class="banner">
-      <p></p>
+      <p><b>We testen een nieuw inlogscherm.</b> Als je tegen problemen aanloopt: meld het!</p>
     </div>
-    -->
     <div class="card">
       <div class="card__left">
-        <noscript><p>Het loginscherm van CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
+        <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank"><img alt="CKC &amp; partners" src="{{ cdn }}/images/ckc-logo.svg" /></a>
+        <noscript><p>CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
         <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
           <fieldset class="hidden-lastpass-password-offset" data-decorator="decide-screen">
             <legend class="rp-name"><span class="visually-hidden">Log in bij </span><span id="rp-name-placeholder" class="rp-name__text">ckc-zoetermeer.nl</span></legend>
@@ -173,14 +172,14 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
         </form>
       </div>
       <div class="card__right">
-        <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank"><img alt="CKC &amp; partners" src="{{ cdn }}/images/ckc-logo.svg" /></a>
-        <p><b>Log in met je CKC ID: </b>één account voor alle websites van CKC &amp; partners</p>
-        <a href="#" class="button button--full-width button--sign-up">Maak een CKC ID</a>
+        <p><b>Op deze website log je in met CKC ID: </b>één account voor alle websites van CKC &amp; partners.</p>
+        <p>Nog geen account? Een nieuwe CKC ID aanmaken duurt nog geen minuut:</p>
+        <a href="#" class="button button--full-width button--sign-up">Maak jouw CKC ID</a>
         <ul class="legal-links list list--plain">
             <li><a href="https://www.ckc-zoetermeer.nl/default/algemene-voorwaarden" target="_blank">Voorwaarden</a></li>
             <li><a href="https://www.ckc-zoetermeer.nl/default/privacy" target="_blank">Privacy</a></li>
             <li><a href="https://www.ckc-zoetermeer.nl/default/contact" target="_blank">Hulp</a></li>
-        </ul>  
+        </ul>
       </div>
     </div>
     <script type="text/json" id="nlx-config">

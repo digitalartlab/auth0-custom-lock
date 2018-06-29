@@ -2,18 +2,18 @@
   background-color: $white;
   margin: auto;
   width: 100%;
-  max-width: 44em;
+  max-width: 25em;
   box-shadow: $cardShadow;
   border-radius: $cardRadius;
-  display: flex;
-  flex-direction: row;
+
+  @media ( min-width: 45em) {
+    display: flex;
+    flex-direction: row;
+    max-width: 44em;
+  }
 
   @supports ( display: grid ) {
     grid-row-start: 2;
-
-    @media ( min-height: 50em ) {
-      top: -1em; /* compensate for negative margin for footer links */
-    }
   }
 
   &__left {
@@ -22,16 +22,14 @@
   &__right {
     flex: 40% 1;
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
     flex-wrap: nowrap;
     background: $primaryColor;
     background-size: cover;
     border-radius: 0 4px 4px 0;
-    color: $white;
-    .logo {
-      margin-bottom: auto;
-      margin-right: 0;
+    color: $black;
+    p {
+      margin-top: 0;
     }
   }
   &__left, &__right {

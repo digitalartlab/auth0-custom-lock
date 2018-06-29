@@ -1,13 +1,15 @@
 .banner {
   background: #333;
-  color: $midGrey;
-  padding: 1.5em;
+  color: $lightGrey;
+  padding: 1em;
   text-align: center;
-  margin: -1em -1.5em 2em;
+  margin: -0.5em -1em 1em;
   display: flex;
   flex-direction: column;
-  @media ( min-width: 40em ) {
-    margin-top: -3em;
+
+  @media ( min-width: 30em ) {
+    margin: -0.5em -1.5em 1em;
+    padding: 1.5em;
   }
 
   p {

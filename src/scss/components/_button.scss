@@ -19,7 +19,7 @@
   transition-duration: .2s;
   transition-timing-function: ease;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba($primaryColor,.6), 0 6px 20px rgba($primaryColor,.6);
+  box-shadow: 0 2px 6px rgba($primaryColor,.4), 0 6px 20px rgba($primaryColor,.3);
 
 
   &:hover, &:active, &:focus {
@@ -43,7 +43,7 @@
   &--secondary {
     border-color: $white;
     background-color: $white;
-    color: $darkerGrey;
+    color: $black;
     text-transform: none;
     box-shadow: 0 1px 5px rgba(0,0,0,.1), 0 4px 15px rgba(0,0,0,.1);
 
@@ -101,7 +101,7 @@
     background-color: $white;
     color: $black;
     text-transform: none;
-    margin-bottom: 1em;
+    margin: .5em 0 auto;
     box-shadow: 0 2px 5px rgba(0,0,0,.05), 0 4px 15px rgba(0,0,0,.02);
 
     &:hover, &:active, &:focus {
