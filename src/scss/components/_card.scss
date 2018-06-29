@@ -1,22 +1,45 @@
 .card {
   background-color: $white;
-  padding: 2em;
-  position: relative;
   margin: auto;
   width: 100%;
-  max-width: 26em;
+  max-width: 44em;
   box-shadow: $cardShadow;
   border-radius: $cardRadius;
-
-  @media ( min-width: 30em ) {
-    padding: 2.5em;
-  }
+  display: flex;
+  flex-direction: row;
 
   @supports ( display: grid ) {
     grid-row-start: 2;
 
     @media ( min-height: 50em ) {
       top: -1em; /* compensate for negative margin for footer links */
+    }
+  }
+
+  &__left {
+    flex: 60% 1;
+  }
+  &__right {
+    flex: 40% 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background: $primaryColor;
+    background-size: cover;
+    border-radius: 0 4px 4px 0;
+    color: $white;
+    .logo {
+      margin-bottom: auto;
+      margin-right: 0;
+    }
+  }
+  &__left, &__right {
+    padding: 2em;
+    position: relative;
+
+    @media ( min-width: 30em ) {
+      padding: 2.5em;
     }
   }
 

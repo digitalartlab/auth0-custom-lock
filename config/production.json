@@ -1,7 +1,7 @@
 {
   "environment": "PROD",
-  "auth0_domain": "auth.digitalartlab.nl",
-  "auth0_tenant": "ckc-zoetermeer.eu",
+  "auth0_domain": "auth.ckc-zoetermeer.nl",
+  "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
   "LDAP_connection_name": "Scholen",
   "person_api_domain": "https://localhost",
   "logout_url": "https://localhost",
