@@ -32,7 +32,7 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta http-equiv="Content-Security-Policy" content="{{{ csp }}}"> -->
     <link rel="dns-prefetch" href="{{{ person_api_domain }}}">
-    <link rel="stylesheet" href="https://use.typekit.net/zrw6ubz.css" type="text/css" />
+    <link rel="stylesheet" href="{{{ fonts }}}" type="text/css" />
     <link rel="stylesheet" href="{{{ cdn }}}/css/styles.css" type="text/css" />
     <link rel="icon" href="{{{ cdn }}}/images/favicon.png" type="image/png" sizes="196x196" />
   </head>
@@ -46,9 +46,9 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
         <noscript><p>CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
         <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
           <fieldset class="hidden-lastpass-password-offset" data-decorator="decide-screen">
-            <legend class="rp-name"><span class="visually-hidden">Log in bij </span><span id="rp-name-placeholder" class="rp-name__text">ckc-zoetermeer.nl</span></legend>
+            <legend class="rp-name"><span class="visually-hidden">Log in bij </span><span id="rp-name-placeholder" class="rp-name__text"></span></legend>
             <div id="loading" class="loading" data-screen hidden>
-              <p class="visually-hidden">Loading…</p>
+              <p class="visually-hidden">Laden…</p>
               <img src="{{{ cdn }}}/images/loading.svg" class="loading__spinner" />
               <p role="alert" id="loading__status" class="loading__status"></p>
             </div>
@@ -77,6 +77,7 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
                     <img  class="icon" src="{{{ cdn }}}/images/google.svg">
                     <span>Log in met Google</span>
                   </button>
+                </li>
               </ul>
             </div>
             <div id="ldap" data-screen hidden>
@@ -113,6 +114,7 @@ on GitHub: https://github.com/mozilla-iam/auth0-custom-lock
                     <img  class="icon" src="{{{ cdn }}}/images/google.svg">
                     <span>Log in met Google</span>
                   </button>
+                </li>
               </ul>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>

@@ -26,10 +26,13 @@
     flex-wrap: nowrap;
     background: $primaryColor;
     background-size: cover;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 0 4px 4px;
     color: $black;
     p {
       margin-top: 0;
+    }
+    @media ( min-width: 45em) {
+      border-radius: 0 4px 4px 0;
     }
   }
   &__left, &__right {

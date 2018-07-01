@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: auto !important;
 
   li {
     margin: 1em 1em 0 0;
@@ -13,7 +14,7 @@
 
   a {
     text-decoration: none;
-    color: rgba($black,.5);
+    color: darken($primaryColor,25);
     transition: color .2s;
     &:hover, &:focus, &:active {
       color: $black;
