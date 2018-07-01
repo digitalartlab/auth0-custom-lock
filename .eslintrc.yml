@@ -46,9 +46,6 @@ rules:
     - error
     - before: true
       after: true
-  linebreak-style:
-    - error
-    - unix
   newline-after-var:
     - error
     - always
