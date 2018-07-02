@@ -2,15 +2,15 @@
   "environment": "DEV",
   "auth0_domain": "ckc-zoetermeer.eu.auth0.com",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
-  "LDAP_connection_name": "Personen",
-  "person_api_domain": "https://localhost",
+  "LDAP_connection_name": "Scholen",
+  "person_api_domain": "http://localhost:8000/api/v1/sso/",
   "logout_url": "https://localhost",
   "sso_dashboard_url": "https://account.digitalartlab.nl",
   "GTM_ID": "",
   "client_ID": "rVnTYsvzWJEXQZrVYKnLQoE8Q98cdfQx",
   "features": {
     "autologin": "true",
-    "person_api_lookup": "false"
+    "person_api_lookup": "true"
   },
   "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
   "cdn": "",

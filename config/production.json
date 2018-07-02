@@ -3,16 +3,16 @@
   "auth0_domain": "auth.ckc-zoetermeer.nl",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
   "LDAP_connection_name": "Scholen",
-  "person_api_domain": "https://localhost",
-  "logout_url": "https://localhost",
-  "sso_dashboard_url": "https://account.digitalartlab.nl",
+  "person_api_domain": "https://user-api.profiel.digitalartlab.nl/api/v1/sso/",
+  "logout_url": "https://profiel.digitalartlab.nl",
+  "sso_dashboard_url": "https://profiel.digitalartlab.nl",
   "GTM_ID": "",
   "features": {
-    "autologin": "true",
-    "person_api_lookup": "false"
+    "autologin": "false",
+    "person_api_lookup": "true"
   },
   "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
-  "cdn": "https://cdn.sso.mozilla.com/nlx/latest",
+  "cdn": "https://cdn.profiel.digitalartlab.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
   "csp": "default-src 'none'; connect-src 'self' https://person-api.sso.mozilla.com; script-src 'self' https://cdn.sso.mozilla.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.sso.mozilla.com; font-src 'self' https://cdn.sso.mozilla.com; img-src 'self' https://cdn.sso.mozilla.com https://www.google-analytics.com"
 }

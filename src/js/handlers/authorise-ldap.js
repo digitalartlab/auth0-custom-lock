@@ -7,7 +7,7 @@ module.exports = function authorise( element, secondTry ) {
   var emailField = document.getElementById( 'field-email' );
   var passwordField = secondTry ? document.getElementById( 'field-password-try-2' ) : document.getElementById( 'field-password' );
   var errorText = document.getElementById( 'error-message-ldap' );
-  var connection = NLX.LDAP_connection_name;
+  var connection = element.dataset.connection || NLX.LDAP_connection_name;
 
   if ( element.id === 'authorise-ldap-credentials-try-2' ) {
     passwordField = document.getElementById( 'field-password-try-2' );
@@ -17,7 +17,7 @@ module.exports = function authorise( element, secondTry ) {
 
   fireGAEvent( 'Authorisation', 'Authorising with LDAP' );
 
-  if ( form.loginMethods && form.loginMethods['supportedByRP'].indexOf( NLX.LDAP_connection_name ) === -1 ) {
+  if ( form.loginMethods && form.loginMethods['supportedByRP'].indexOf( connection ) === -1 ) {
     ui.setLockState( element, 'ldap-not-available' );
     return;
   }
