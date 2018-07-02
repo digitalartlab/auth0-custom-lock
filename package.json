@@ -1,13 +1,13 @@
 {
-  "name": "lock",
-  "version": "1.4.0",
+  "name": "custom-auth0-lock",
+  "version": "0.1.0",
   "description": "CKC & partners Auth0 login",
   "main": "index.js",
   "scripts": {
     "start": "gulp dev",
     "build": "gulp build"
   },
-  "author": "Thijmen de Valk",
+  "author": "Wing Creative",
   "license": "MPL-2.0",
   "devDependencies": {
     "browser-sync": "^2.24.5",
