@@ -6,7 +6,7 @@
   "person_api_domain": "http://localhost:8000/api/v1/sso/",
   "logout_url": "https://localhost",
   "sso_dashboard_url": "https://account.digitalartlab.nl",
-  "GTM_ID": "",
+  "GTM_ID": "GTM-5R8359C",
   "client_ID": "rVnTYsvzWJEXQZrVYKnLQoE8Q98cdfQx",
   "features": {
     "autologin": "true",

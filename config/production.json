@@ -6,7 +6,7 @@
   "person_api_domain": "https://user-api.profiel.digitalartlab.nl/api/v1/sso/",
   "logout_url": "https://profiel.digitalartlab.nl",
   "sso_dashboard_url": "https://profiel.digitalartlab.nl",
-  "GTM_ID": "",
+  "GTM_ID": "GTM-5R8359C",
   "features": {
     "autologin": "false",
     "person_api_lookup": "true"
