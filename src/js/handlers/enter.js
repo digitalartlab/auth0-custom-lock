@@ -11,11 +11,7 @@ function showNonLDAP( element ) {
 function showLDAP( element, passwordField, connection ) {
   // show password field
   ui.setLockState( element, 'ldap' );
-  // focus password field
   element.dataset.connection = connection;
-  setTimeout( function() {
-    passwordField.focus();
-  }, 400 );
 
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
 }

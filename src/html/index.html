@@ -63,7 +63,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
             </div>
             <div id="ldap" data-screen hidden>
               <div class="form__input">
-                <input type="password" id="field-password" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials"  />
+                <input type="password" id="field-password" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus />
                 <label for="field-password"><span>Wachtwoord</span></label>
               </div>
               <input type="submit" class="button button--full-width" id="authorise-ldap-credentials" value="Log in"/>
@@ -104,7 +104,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Error</span></h2>
               <p>Probeer het nogmaals of neem contact op voor ondersteuning.</p>
               <div class="form__input">
-                <input type="password" id="field-password-try-2" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials"  />
+                <input type="password" id="field-password-try-2" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus />
                 <label for="field-password-try-2"><span>Wachtwoord</span></label>
               </div>
               <input type="submit" class="button button--full-width" id="authorise-ldap-credentials-try-2" value="Log in" />
@@ -143,7 +143,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
         </form>
       </div>
       <div class="card__right">
-        <p><b>Op deze website log je in met CKC ID: </b>één account voor alle websites van CKC &amp; partners.</p>
+        <p><b>Ook bij <span id="rp-name-sidebar">deze website</span> log je in met CKC ID: </b>één account voor alle websites van CKC &amp; partners.</p>
         <!-- <p>Nog geen account? Een nieuwe CKC ID aanmaken duurt nog geen minuut:</p>
         <a href="#" class="button button--full-width button--sign-up">Maak jouw CKC ID</a> -->
         <ul class="legal-links list list--plain">
