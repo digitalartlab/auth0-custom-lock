@@ -12,7 +12,7 @@
     "person_api_lookup": "true",
     "maintenance_mode": "false"
   },
-  "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
+  "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ],
   "cdn": "https://cdn.profiel.digitalartlab.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
   "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl; font-src 'self'; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",

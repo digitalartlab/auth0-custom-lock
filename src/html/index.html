@@ -53,12 +53,6 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
                     <span>Log in met Facebook</span>
                   </button>
                 </li>
-                <li data-optional-login-method="twitter">
-                  <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-twitter">
-                    <img class="icon" src="{{{ cdn }}}/images/twitter.svg">
-                    <span>Log in met Twitter</span>
-                  </button>
-                </li>
                 <li data-optional-login-method="google-oauth2">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-google">
                     <img  class="icon" src="{{{ cdn }}}/images/google.svg">
@@ -88,12 +82,6 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
                     <img  class="icon" src="{{{ cdn }}}/images/facebook.svg">
                     <span>Log in met Facebook</span>
-                  </button>
-                </li>
-                <li data-optional-login-method="twitter">
-                  <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-twitter">
-                    <img class="icon" src="{{{ cdn }}}/images/twitter.svg">
-                    <span>Log in met Twitter</span>
                   </button>
                 </li>
                 <li data-optional-login-method="google-oauth2">
@@ -130,15 +118,9 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
-            <div id="ldap-not-available" data-screen hidden>
-              <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Error</span></h2>
-              <p>Je kunt niet met dit accounttype inloggen op deze website.</p>
-              <hr>
-              <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
-            </div>
-            <div id="ldap-required" data-screen hidden>
-              <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Error</span></h2>
-              <p>Je kunt niet met dit accounttype inloggen op deze website.</p>
+            <div id="method-not-available" data-screen hidden>
+              <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Oeps</span></h2>
+              <p>Je kunt niet met dit accounttype inloggen op deze website. Dit kan voorkomen bij websites specifiek voor scholen of met strengere toegangseisen.</p>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>

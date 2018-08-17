@@ -13,7 +13,7 @@
     "person_api_lookup": "true",
     "maintenance_mode": "true"
   },
-  "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
+  "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ],
   "cdn": "",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
   "csp": "default-src 'none'; connect-src 'self' https://person-api.sso.allizom.org; script-src 'self' https://cdn.sso.allizom.org https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.sso.allizom.org; font-src 'self' https://cdn.sso.allizom.org; img-src 'self' https://cdn.sso.allizom.org https://www.google-analytics.com",
