@@ -18,7 +18,7 @@ module.exports = function authorise( element, secondTry ) {
   fireGAEvent( 'Authorisation', 'Authorising with LDAP' );
 
   if ( form.loginMethods && form.loginMethods['supportedByRP'].indexOf( connection ) === -1 ) {
-    ui.setLockState( element, 'ldap-not-available' );
+    ui.setLockState( element, 'method-not-available' );
     return;
   }
 

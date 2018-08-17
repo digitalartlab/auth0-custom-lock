@@ -50,11 +50,16 @@ module.exports = function enter( element ) {
           var isLDAP = userinfo.hasOwnProperty( 'email' ) && userinfo.hasOwnProperty( 'connection' ) && ( userinfo[ 'connection' ] === 'Scholen' || userinfo[ 'connection' ] === 'Personen' );
 
           if ( isLDAP ) {
-            showLDAP( element, passwordField, userinfo.connection );
+            if ( supportedByRP.indexOf( userinfo.connection ) !== -1 ) {
+              showLDAP( element, passwordField, userinfo.connection );
+            }
+            else {
+              ui.setLockState( element, 'method-not-available' );
+            }
           }
           else {
             if ( onlyAcceptsLDAP ) {
-              ui.setLockState( element, 'ldap-required' );
+              ui.setLockState( element, 'method-not-available' );
             }
             else {
               showNonLDAP( element );
@@ -64,7 +69,7 @@ module.exports = function enter( element ) {
         .catch( function( err ) {
           console.error( err );
           if ( onlyAcceptsLDAP ) {
-            ui.setLockState( element, 'ldap-required' );
+            ui.setLockState( element, 'method-not-available' );
           }
           else {
             showNonLDAP( element );
@@ -73,7 +78,7 @@ module.exports = function enter( element ) {
     }
     else {
       if ( onlyAcceptsLDAP ) {
-        ui.setLockState( element, 'ldap-required' );
+        ui.setLockState( element, 'method-not-available' );
       }
       else {
         showNonLDAP( element );
