@@ -10,25 +10,25 @@
   "author": "Wing Creative",
   "license": "MPL-2.0",
   "devDependencies": {
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.24.6",
     "browserify": "^14.3.0",
     "del": "^2.2.2",
     "eslint": "^3.13.1",
     "gulp": "^4.0.0",
     "gulp-eslint": "^3.0.1",
-    "gulp-minify": "^3.0.2",
+    "gulp-minify": "^3.1.0",
     "gulp-mustache": "^3.0.1",
     "gulp-sass": "^3.2.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
     "gulplog": "^1.0.0",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
-    "auth0-js": "^9.6.1",
-    "promise-polyfill": "^8.0.0",
-    "url-search-params-polyfill": "^4.0.0",
+    "auth0-js": "^9.7.3",
+    "promise-polyfill": "^8.1.0",
+    "url-search-params-polyfill": "^4.0.1",
     "whatwg-fetch": "^2.0.4"
   }
 }

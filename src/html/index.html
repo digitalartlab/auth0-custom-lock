@@ -22,9 +22,11 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
     <!-- <link rel="icon" href="{{{ cdn }}}/images/favicon.png" type="image/png" sizes="196x196" /> -->
   </head>
   <body data-decorator="load-ga display-rp-name prevent-clickjack">
-    <!-- <div class="banner">
-      <p></p>
-    </div> -->
+    <div data-decorator="check-if-maintenance-mode" hidden>
+      <div class="banner">
+        <p>We zijn bezig met onderhoud aan CKC ID. Problemen met inloggen? Probeer het dan over een paar minuten opnieuw.</p>
+      </div>
+    </div>
     <div class="card">
       <div class="card__left">
         <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank"><img alt="CKC &amp; partners" src="{{ cdn }}/images/ckc-logo.svg" /></a>
@@ -180,10 +182,18 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
       "GTM_ID": "{{{ GTM_ID }}}",
       "features" : {
         "autologin": "{{{ features.autologin }}}",
-        "person_api_lookup": "{{{ features.person_api_lookup }}}"
+        "person_api_lookup": "{{{ features.person_api_lookup }}}",
+        "maintenance_mode": "{{{ features.maintenance_mode }}}"
       },
       "supportedLoginMethods": "{{{ supportedLoginMethods }}}",
-      "logout_url": "{{{ logout_url }}}"
+      "logout_url": "{{{ logout_url }}}",
+      "displayNames": {
+        "facebook": "{{{ displayNames.facebook }}}",
+        "google-oauth2": "{{{ displayNames.google-oauth2 }}}",
+        "Scholen": "{{{ displayNames.Scholen }}}",
+        "Personen": "{{{ displayNames.Personen }}}",
+        "email": "{{{ displayNames.email }}}"
+      }
    }</script>
     <script src="{{{ cdn }}}/js/main.js?v{{{ version }}}"></script>
   </body>

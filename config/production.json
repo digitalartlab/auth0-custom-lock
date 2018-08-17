@@ -8,11 +8,19 @@
   "sso_dashboard_url": "https://profiel.digitalartlab.nl",
   "GTM_ID": "GTM-5R8359C",
   "features": {
-    "autologin": "false",
-    "person_api_lookup": "true"
+    "autologin": "true",
+    "person_api_lookup": "true",
+    "maintenance_mode": "false"
   },
   "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
   "cdn": "https://cdn.profiel.digitalartlab.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://person-api.sso.mozilla.com; script-src 'self' https://cdn.sso.mozilla.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.sso.mozilla.com; font-src 'self' https://cdn.sso.mozilla.com; img-src 'self' https://cdn.sso.mozilla.com https://www.google-analytics.com"
+  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl; font-src 'self'; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",
+  "displayNames": {
+    "facebook": "Facebook",
+    "google-oauth2": "Google",
+    "Scholen": "je schoolaccount",
+    "Personen": "je CKC ID",
+    "email": "email"
+  }
 }

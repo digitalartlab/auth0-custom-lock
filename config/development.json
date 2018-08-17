@@ -3,17 +3,25 @@
   "auth0_domain": "ckc-zoetermeer.eu.auth0.com",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
   "LDAP_connection_name": "Scholen",
-  "person_api_domain": "http://localhost:8000/api/v1/sso/",
+  "person_api_domain": "https://europe-west1-keystone-user-api.cloudfunctions.net/connection/sso/",
   "logout_url": "https://localhost",
   "sso_dashboard_url": "https://account.digitalartlab.nl",
   "GTM_ID": "GTM-5R8359C",
   "client_ID": "rVnTYsvzWJEXQZrVYKnLQoE8Q98cdfQx",
   "features": {
     "autologin": "true",
-    "person_api_lookup": "true"
+    "person_api_lookup": "true",
+    "maintenance_mode": "true"
   },
   "supportedLoginMethods": [ "twitter", "facebook", "google-oauth2", "email" ],
   "cdn": "",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://person-api.sso.allizom.org; script-src 'self' https://mozilla-iam.github.io https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://mozilla-iam.github.io; font-src 'self' https://mozilla-iam.github.io; img-src 'self' https://mozilla-iam.github.io https://www.google-analytics.com"
+  "csp": "default-src 'none'; connect-src 'self' https://person-api.sso.allizom.org; script-src 'self' https://cdn.sso.allizom.org https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.sso.allizom.org; font-src 'self' https://cdn.sso.allizom.org; img-src 'self' https://cdn.sso.allizom.org https://www.google-analytics.com",
+  "displayNames": {
+    "facebook": "Facebook",
+    "google-oauth2": "Google",
+    "Scholen": "je schoolaccount",
+    "Personen": "je CKC ID",
+    "email": "email"
+  }
 }
