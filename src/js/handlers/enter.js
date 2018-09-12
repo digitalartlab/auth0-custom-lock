@@ -22,7 +22,7 @@ module.exports = function enter( element ) {
   var emailFieldValue = emailField.value.toLowerCase();
   var passwordField = document.getElementById( 'field-password' );
   var isAccountLinking = accountLinking.isAccountLinking();
-  var qualifiesForLDAPShortcut = /ckc-zoetermeer.nl$/.test( emailField.value );
+  var qualifiesForLDAPShortcut = false;
   var supportedByRP = form.loginMethods ? form.loginMethods['supportedByRP'] : null;
   var onlyAcceptsLDAP = supportedByRP && supportedByRP.length === 1 && supportedByRP.indexOf( NLX.LDAP_connection_name ) === 0;
   var ENDPOINT = NLX.person_api_domain;
@@ -31,58 +31,53 @@ module.exports = function enter( element ) {
     emailField.focus();
     return;
   }
+  
+  if ( NLX.features.person_api_lookup ) {
 
-  if ( qualifiesForLDAPShortcut && isAccountLinking === false ) {
-    showLDAP( element, passwordField );
-  }
-  else {
-    if ( NLX.features.person_api_lookup ) {
+    ui.setLockState( element, 'loading' );
 
-      ui.setLockState( element, 'loading' );
+    fetch( ENDPOINT + emailFieldValue )
+      .then( function( response ) {
+        return response.json();
+      })
+      .then( function( data ) {
+        var userinfo = JSON.parse( JSON.stringify( data ) );
 
-      fetch( ENDPOINT + emailFieldValue )
-        .then( function( response ) {
-          return response.json();
-        })
-        .then( function( data ) {
-          var userinfo = JSON.parse( JSON.stringify( data ) );
+        var isLDAP = userinfo.hasOwnProperty( 'email' ) && userinfo.hasOwnProperty( 'connection' ) && ( userinfo[ 'connection' ] === 'Scholen' || userinfo[ 'connection' ] === 'Personen' );
 
-          var isLDAP = userinfo.hasOwnProperty( 'email' ) && userinfo.hasOwnProperty( 'connection' ) && ( userinfo[ 'connection' ] === 'Scholen' || userinfo[ 'connection' ] === 'Personen' );
-
-          if ( isLDAP ) {
-            if ( supportedByRP.indexOf( userinfo.connection ) !== -1 ) {
-              showLDAP( element, passwordField, userinfo.connection );
-            }
-            else {
-              ui.setLockState( element, 'method-not-available' );
-            }
+        if ( isLDAP ) {
+          if ( supportedByRP.indexOf( userinfo.connection ) !== -1 ) {
+            showLDAP( element, passwordField, userinfo.connection );
           }
           else {
-            if ( onlyAcceptsLDAP ) {
-              ui.setLockState( element, 'method-not-available' );
-            }
-            else {
-              showNonLDAP( element );
-            }
+            ui.setLockState( element, 'method-not-available' );
           }
-        })
-        .catch( function( err ) {
-          console.error( err );
+        }
+        else {
           if ( onlyAcceptsLDAP ) {
             ui.setLockState( element, 'method-not-available' );
           }
           else {
             showNonLDAP( element );
           }
-        });
+        }
+      })
+      .catch( function( err ) {
+        console.error( err );
+        if ( onlyAcceptsLDAP ) {
+          ui.setLockState( element, 'method-not-available' );
+        }
+        else {
+          showNonLDAP( element );
+        }
+      });
+  }
+  else {
+    if ( onlyAcceptsLDAP ) {
+      ui.setLockState( element, 'method-not-available' );
     }
     else {
-      if ( onlyAcceptsLDAP ) {
-        ui.setLockState( element, 'method-not-available' );
-      }
-      else {
-        showNonLDAP( element );
-      }
+      showNonLDAP( element );
     }
   }
 };
