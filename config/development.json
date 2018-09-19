@@ -9,7 +9,7 @@
   "GTM_ID": "GTM-5R8359C",
   "client_ID": "rVnTYsvzWJEXQZrVYKnLQoE8Q98cdfQx",
   "features": {
-    "autologin": "true",
+    "autologin": "false",
     "person_api_lookup": "true",
     "maintenance_mode": "true"
   },

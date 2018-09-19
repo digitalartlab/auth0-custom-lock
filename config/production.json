@@ -8,7 +8,7 @@
   "sso_dashboard_url": "https://profiel.digitalartlab.nl",
   "GTM_ID": "GTM-5R8359C",
   "features": {
-    "autologin": "true",
+    "autologin": "false",
     "person_api_lookup": "true",
     "maintenance_mode": "false"
   },
