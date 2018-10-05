@@ -7,7 +7,7 @@ module.exports = function() {
 
   if ( rp && logoLocation && logoAnchorLocation ) {
     if ( rp.startsWith( 'Cultuur op School' ) ) {
-      logoLocation.src = cdn + '/images/cos-logo.png';
+      logoLocation.src = cdn + '/images/cos-logo.svg';
       logoAnchorLocation.href = 'https://cultuuropschool.nl';
     }
     else if ( rp.startsWith( 'Digital Art Lab' ) ) {
