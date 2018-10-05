@@ -21,7 +21,7 @@ module.exports = function enter( element ) {
   var emailFieldValue = emailField.value.toLowerCase();
   var passwordField = document.getElementById( 'field-password' );
   var supportedByRP = form.loginMethods ? form.loginMethods['supportedByRP'] : null;
-  var onlyAcceptsLDAP = supportedByRP && supportedByRP.length === 1 && supportedByRP.indexOf( NLX.LDAP_connection_name ) === 0;
+  var supportsPasswordless = supportedByRP && supportedByRP.indexOf( 'email' ) > -1;
   var ENDPOINT = NLX.person_api_domain;
 
   if ( emailField.value === '' || emailField.validity.valid === false ) {
@@ -51,7 +51,7 @@ module.exports = function enter( element ) {
           }
         }
         else {
-          if ( onlyAcceptsLDAP ) {
+          if ( !supportsPasswordless ) {
             ui.setLockState( element, 'method-not-available' );
           }
           else {
@@ -61,7 +61,7 @@ module.exports = function enter( element ) {
       })
       .catch( function( err ) {
         console.error( err );
-        if ( onlyAcceptsLDAP ) {
+        if ( !supportsPasswordless ) {
           ui.setLockState( element, 'method-not-available' );
         }
         else {
@@ -70,7 +70,7 @@ module.exports = function enter( element ) {
       });
   }
   else {
-    if ( onlyAcceptsLDAP ) {
+    if ( !supportsPasswordless ) {
       ui.setLockState( element, 'method-not-available' );
     }
     else {

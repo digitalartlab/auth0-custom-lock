@@ -2,7 +2,6 @@
   "environment": "PROD",
   "auth0_domain": "auth.ckc-zoetermeer.nl",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
-  "LDAP_connection_name": "Scholen",
   "person_api_domain": "https://user-api.profiel.digitalartlab.nl/api/v1/sso/",
   "logout_url": "https://profiel.digitalartlab.nl",
   "sso_dashboard_url": "https://profiel.digitalartlab.nl",

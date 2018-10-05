@@ -101,7 +101,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <button id="back" type="button" class="button button--text-only card__back  button--unpadded" data-handler="go-to-initial-page">Verkeerde emailadres?</button>
             </div>
             <div id="error-password" data-screen hidden>
-              <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Error</span></h2>
+              <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Er is een technische fout opgetreden</span></h2>
               <p>Probeer het nogmaals of neem contact op voor ondersteuning.</p>
               <div class="form__input">
                 <input type="password" id="field-password-try-2" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus />
@@ -120,7 +120,8 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
             </div>
             <div id="method-not-available" data-screen hidden>
               <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Oeps</span></h2>
-              <p>Je kunt niet met dit accounttype inloggen op deze website. Dit kan voorkomen bij websites specifiek voor scholen of met strengere toegangseisen.</p>
+              <p>Je kunt niet met dit accounttype inloggen op deze website.</p>
+              <p>Dit kan voorkomen bij websites specifiek voor scholen of met strengere toegangseisen.</p>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
@@ -160,7 +161,6 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
       "environment": "{{{ environment }}}",
       "domain": "{{{ auth0_domain }}}",
       "client_ID": "{{{ client_ID }}}",
-      "LDAP_connection_name": "{{{ LDAP_connection_name }}}",
       "person_api_domain": "{{{ person_api_domain }}}",
       "GTM_ID": "{{{ GTM_ID }}}",
       "cdn": "{{{ cdn }}}",

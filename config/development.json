@@ -2,7 +2,6 @@
   "environment": "DEV",
   "auth0_domain": "ckc-zoetermeer.eu.auth0.com",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
-  "LDAP_connection_name": "Scholen",
   "person_api_domain": "https://europe-west1-keystone-user-api.cloudfunctions.net/connection/sso/",
   "logout_url": "https://localhost",
   "sso_dashboard_url": "https://account.digitalartlab.nl",

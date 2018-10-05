@@ -7,7 +7,7 @@ module.exports = function authorise( element, secondTry ) {
   var emailField = document.getElementById( 'field-email' );
   var passwordField = secondTry ? document.getElementById( 'field-password-try-2' ) : document.getElementById( 'field-password' );
   var errorText = document.getElementById( 'error-message-ldap' );
-  var connection = element.dataset.connection || NLX.LDAP_connection_name;
+  var connection = element.dataset.connection || null;
 
   if ( element.id === 'authorise-ldap-credentials-try-2' ) {
     passwordField = document.getElementById( 'field-password-try-2' );
@@ -34,7 +34,7 @@ module.exports = function authorise( element, secondTry ) {
     }
 
     if ( error.code && error.code === 'invalid_user_password' ) {
-      errorText.lastElementChild.textContent = error.description;
+      errorText.lastElementChild.textContent = 'Wachtwoord onjuist';
       fireGAEvent( 'Error', 'LDAP: invalid username or password' );
     }
 

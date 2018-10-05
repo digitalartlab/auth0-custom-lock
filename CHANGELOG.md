@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.10] - 2018-10-05
+### Fixed
+- Check for only LDAP didn't work, so now it's an 'is passwordless enabled' check instead
+- Wrong password error now translated
+- Passwordless error would result in reset to start screen
+
 ## [1.0.9] - 2018-10-05
 ### Added
 - More explicit 'login' header
