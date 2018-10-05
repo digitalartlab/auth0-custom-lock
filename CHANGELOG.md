@@ -3,6 +3,17 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2018-10-05
+### Added
+- Cultuur op School and Digital Art Lab logos.
+
+### Changed
+- Fullscreen on mobile breakpoint
+
+## [1.0.6] - 2018-09-21
+### Fixed
+- Autologin didn't check if it was disabled.
+
 ## [1.0.5] - 2018-09-19
 ### Changed
 - Disabled autologin, as Auth0 now has Seamless SSO support.

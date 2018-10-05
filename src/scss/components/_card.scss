@@ -2,14 +2,18 @@
   background-color: $white;
   margin: auto;
   width: 100%;
-  max-width: 25em;
-  box-shadow: $cardShadow;
   border-radius: $cardRadius;
 
-  @media ( min-width: 45em) {
+  @media ( min-width: 30em ) {
+    box-shadow: $cardShadow;
+    max-width: 25em;
+  }
+
+  @media ( min-width: 45em ) {
     display: flex;
     flex-direction: row;
     max-width: 44em;
+    box-shadow: $cardShadow;
   }
 
   @supports ( display: grid ) {
@@ -26,20 +30,38 @@
     flex-wrap: nowrap;
     background: $primaryColor;
     background-size: cover;
-    border-radius: 0 0 4px 4px;
     color: $black;
     p {
       margin-top: 0;
     }
-    @media ( min-width: 45em) {
+    .footer-logo {
+      width: 100%;
+      max-width: 194px;
+      margin: 0;
+    }
+    .footer-logo-text {
+      margin-top: auto;
+      font-size: .85em;
+      color: darken($primaryColor,25);
+    }
+    @media ( min-width: 30em ) {
+      border-radius: 0 0 4px 4px;
+    }
+    @media ( min-width: 45em ) {
       border-radius: 0 4px 4px 0;
+      .footer-logo {
+        margin: 0 auto -10px;
+      }
+      .footer-logo-text {
+        text-align: center;
+      }
     }
   }
   &__left, &__right {
     padding: 2em;
     position: relative;
 
-    @media ( min-width: 30em ) {
+    @media ( min-width: 45em ) {
       padding: 2.5em;
     }
   }

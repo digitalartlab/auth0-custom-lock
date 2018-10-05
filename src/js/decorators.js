@@ -5,6 +5,7 @@
 var decorators = {
   'check-if-maintenance-mode': require( 'decorators/check-if-maintenance-mode' ),
   'decide-screen': require( 'decorators/decide-screen' ),
+  'display-logo': require( 'decorators/display-logo' ),
   'display-rp-name': require( 'decorators/display-rp-name' ),
   'fill-in-session-info': require( 'decorators/fill-in-session-info' ),
   'filter-connections': require( 'decorators/filter-connections' ),

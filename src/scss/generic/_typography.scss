@@ -4,17 +4,20 @@ body {
 }
 
 body {
-  background: $backgroundColor;
+  background: $white;
   color: $darkerGrey;
   font-family: "aktiv-grotesk", sans-serif;
   letter-spacing: 0.03em;
-  margin: 0 1em;
-  padding: .5em 0;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  margin: 0;
+  padding: 0;
 
   @media ( min-width: 30em ) {
+    background: $backgroundColor;
     margin: 0 1.5em;
+    padding: .5em 0;
+    display: grid;
+    grid-template-rows: auto;  
+    grid-template-rows: auto 1fr;
   }
 }
 

@@ -2,10 +2,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: auto !important;
 
   li {
-    margin: 1em 1em 0 0;
+    margin: 1.5em 1em 0 0;
     font-size: .75em;
     &:last-child {
       margin-right: 0;
@@ -14,10 +13,10 @@
 
   a {
     text-decoration: none;
-    color: darken($primaryColor,25);
+    color: $primaryColor;
     transition: color .2s;
     &:hover, &:focus, &:active {
-      color: $black;
+      color: darken($primaryColor,25);
       // text-decoration: underline;
       // text-decoration-skip: ink;
     }

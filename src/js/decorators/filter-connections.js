@@ -28,6 +28,10 @@ module.exports = function( element ) {
     shouldAutologin = false;
   }
 
+  else if ( NLX.features.autologin === 'false' ) {
+    shouldAutologin = false;
+  }
+
   else if ( usedBackButton ) {
     fireGAEvent( 'Auto-login', 'Used back button to return, aborting auto-login' );
     shouldAutologin = false;
