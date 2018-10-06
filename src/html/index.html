@@ -17,9 +17,9 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta http-equiv="Content-Security-Policy" content="{{{ csp }}}"> -->
     <link rel="dns-prefetch" href="{{{ person_api_domain }}}">
-    <link rel="stylesheet" href="{{{ fonts }}}" type="text/css" />
-    <link rel="stylesheet" href="{{{ cdn }}}/css/styles.css?v{{{ version }}}" type="text/css" />
-    <!-- <link rel="icon" href="{{{ cdn }}}/images/favicon.png" type="image/png" sizes="196x196" /> -->
+    <link rel="stylesheet" href="{{{ fonts }}}" type="text/css">
+    <link rel="stylesheet" href="{{{ cdn }}}/css/styles.css?v{{{ version }}}" type="text/css">
+    <!-- <link rel="icon" href="{{{ cdn }}}/images/favicon.png" type="image/png" sizes="196x196"> -->
   </head>
   <body data-decorator="load-ga display-rp-name display-logo prevent-clickjack">
     <div data-decorator="check-if-maintenance-mode" hidden>
@@ -29,33 +29,33 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
     </div>
     <div class="card">
       <div class="card__left">
-        <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank" id="logoAnchor"><img alt="CKC &amp; partners" id="logo" src="{{{ cdn }}}/images/ckc-logo.svg" /></a>
+        <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank" id="logoAnchor" rel="noopener"><img alt="CKC &amp; partners" id="logo" src="{{{ cdn }}}/images/ckc-logo.svg"></a>
         <noscript><p>CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
         <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
           <fieldset class="hidden-lastpass-password-offset" data-decorator="decide-screen">
             <legend class="rp-name"><h1>Inloggen</h1>Ga door naar <span id="rp-name-placeholder" class="rp-name__text">CKC &amp; partners</span></legend>
             <div id="loading" class="loading" data-screen hidden>
               <p class="visually-hidden">Laden…</p>
-              <img src="{{{ cdn }}}/images/loading.svg" class="loading__spinner" />
+              <img src="{{{ cdn }}}/images/loading.svg" class="loading__spinner" alt="">
               <p role="alert" id="loading__status" class="loading__status"></p>
             </div>
             <div id="initial" data-screen hidden>
               <div class="form__input">
-                <input type="email" name="username" id="field-email" autocomplete="email" autofocus data-decorator="watch-contents" />
+                <input type="email" name="username" id="field-email" autocomplete="email" autofocus data-decorator="watch-contents">
                 <label for="field-email"><span>Log in met email</span></label>
               </div>
-              <input type="submit" class="button button--full-width" id="enter-initial" value="Volgende" />
+              <input type="submit" class="button button--full-width" id="enter-initial" value="Volgende">
               <hr>
               <ul class="login-options list list--plain">
                 <li data-optional-login-method="facebook">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
-                    <img  class="icon" src="{{{ cdn }}}/images/facebook.svg">
+                    <img  class="icon" src="{{{ cdn }}}/images/facebook.svg" alt="">
                     <span>Log in met Facebook</span>
                   </button>
                 </li>
                 <li data-optional-login-method="google-oauth2">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-google">
-                    <img  class="icon" src="{{{ cdn }}}/images/google.svg">
+                    <img  class="icon" src="{{{ cdn }}}/images/google.svg" alt="">
                     <span>Log in met Google</span>
                   </button>
                 </li>
@@ -63,10 +63,10 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
             </div>
             <div id="ldap" data-screen hidden>
               <div class="form__input">
-                <input type="password" id="field-password" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus />
+                <input type="password" id="field-password" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus>
                 <label for="field-password"><span>Wachtwoord</span></label>
               </div>
-              <input type="submit" class="button button--full-width" id="authorise-ldap-credentials" value="Log in"/>
+              <input type="submit" class="button button--full-width" id="authorise-ldap-credentials" value="Log in">
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
@@ -80,13 +80,13 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <ul class="login-options list list--plain">
                 <li data-optional-login-method="facebook">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
-                    <img  class="icon" src="{{{ cdn }}}/images/facebook.svg">
+                    <img  class="icon" src="{{{ cdn }}}/images/facebook.svg" alt="">
                     <span>Log in met Facebook</span>
                   </button>
                 </li>
                 <li data-optional-login-method="google-oauth2">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-google">
-                    <img  class="icon" src="{{{ cdn }}}/images/google.svg">
+                    <img  class="icon" src="{{{ cdn }}}/images/google.svg" alt="">
                     <span>Log in met Google</span>
                   </button>
                 </li>
@@ -95,31 +95,31 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
             <div id="passwordless-success" data-screen hidden>
-              <h2 class="card__heading card__heading--success"><img src="{{{ cdn }}}/images/envelope.svg" class="card__heading-icon" /> <span>Gelukt!</span></h2>
+              <h2 class="card__heading card__heading--success"><img src="{{{ cdn }}}/images/envelope.svg" class="card__heading-icon" alt=""> <span>Gelukt!</span></h2>
               <p>Er is een email gestuurd naar <span id="passwordless-success-email-address"></span>. Je magische link verloopt over 15 minuten.</p>
               <hr>
               <button id="back" type="button" class="button button--text-only card__back  button--unpadded" data-handler="go-to-initial-page">Verkeerde emailadres?</button>
             </div>
             <div id="error-password" data-screen hidden>
-              <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Er is een technische fout opgetreden</span></h2>
+              <h2 class="card__heading card__heading--error" id="error-message-ldap"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" alt=""> <span>Er is een technische fout opgetreden</span></h2>
               <p>Probeer het nogmaals of neem contact op voor ondersteuning.</p>
               <div class="form__input">
-                <input type="password" id="field-password-try-2" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus />
+                <input type="password" id="field-password-try-2" autocomplete="current-password" name="password" data-decorator="submit-with-enter watch-contents" data-continue-with="authorise-ldap-credentials" autofocus>
                 <label for="field-password-try-2"><span>Wachtwoord</span></label>
               </div>
-              <input type="submit" class="button button--full-width" id="authorise-ldap-credentials-try-2" value="Log in" />
+              <input type="submit" class="button button--full-width" id="authorise-ldap-credentials-try-2" value="Log in">
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
             <div id="error-passwordless" data-screen hidden>
-              <h2 class="card__heading card__heading--error" id="error-message-passwordless"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Error</span></h2>
+              <h2 class="card__heading card__heading--error" id="error-message-passwordless"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" alt=""> <span>Error</span></h2>
               <p>We kunnen geen email versturen naar dit adres</p>
               <button type="button" class="button button--text-only card__back  button--unpadded" data-handler="go-to-initial-page">Probeer opnieuw</button>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
             <div id="method-not-available" data-screen hidden>
-              <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" /> <span>Oeps</span></h2>
+              <h2 class="card__heading card__heading--error"><img src="{{{ cdn }}}/images/circled-x.svg" class="card__heading-icon" alt=""> <span>Oeps</span></h2>
               <p>Je kunt niet met dit accounttype inloggen op deze website.</p>
               <p>Dit kan voorkomen bij websites specifiek voor scholen of met strengere toegangseisen.</p>
               <hr>
@@ -139,20 +139,20 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               </ul>
             </div>
             {{! this input is intentionally hidden to trigger LastPass }}
-            <input type="password" id="hidden-lastpass-password" autocomplete="current-password" name="hidden-lastpass-password" aria-hidden />
+            <input type="password" id="hidden-lastpass-password" autocomplete="current-password" name="hidden-lastpass-password" aria-hidden>
           </fieldset>
         </form>
         <ul class="legal-links list list--plain">
-          <li><a href="https://www.ckc-zoetermeer.nl/default/algemene-voorwaarden" target="_blank">Voorwaarden</a></li>
-          <li><a href="https://www.ckc-zoetermeer.nl/default/privacy" target="_blank">Privacy</a></li>
-          <li><a href="https://www.ckc-zoetermeer.nl/default/contact" target="_blank">Hulp</a></li>
+          <li><a href="https://www.ckc-zoetermeer.nl/default/algemene-voorwaarden" target="_blank" rel="noopener">Voorwaarden</a></li>
+          <li><a href="https://www.ckc-zoetermeer.nl/default/privacy" target="_blank" rel="noopener">Privacy</a></li>
+          <li><a href="https://www.ckc-zoetermeer.nl/default/contact" target="_blank" rel="noopener">Hulp</a></li>
         </ul>
       </div>
       <div class="card__right">
         <p><b>Ook bij <span id="rp-name-sidebar">deze website</span> log je in met CKC ID. </b></p>
         <!-- <a href="#" class="button button--full-width button--sign-up">Maak jouw CKC ID</a> -->
-        <p class="footer-logo-text">Met CKC ID log je in bij deze websites van CKC & partners</p>
-        <img src="{{{ cdn }}}/images/footer-logos.svg" class="footer-logo">
+        <p class="footer-logo-text">Met CKC ID log je in bij deze websites van CKC & partners<span class="visually-hidden">: CKC & partners, Cultuur op School en Digital Art Lab</span></p>
+        <img src="{{{ cdn }}}/images/footer-logos.svg" class="footer-logo" alt="">
       </div>
     </div>
     <script type="text/json" id="nlx-config">
