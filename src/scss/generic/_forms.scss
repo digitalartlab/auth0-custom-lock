@@ -39,13 +39,13 @@ input[type="password"] {
   border-radius: $cardRadius;
   transition: border-color .2s ease;
   line-height: 1.4;
-  border: 2px solid $midGrey;
+  border: 2px solid $primaryColor;
 
   &:hover,
   &:focus {
     outline: none;
     background-color: $white;
-    border-color: $primaryColor;
+    border-color: $black;
   }
 
   &:focus {
@@ -67,7 +67,7 @@ input[type="password"] {
     left: .65em;
     padding: 0 4px;
     background: $white;
-    color: $primaryColor;
+    color: $black;
     font-weight: bold;
     font-size: .75em;
   }

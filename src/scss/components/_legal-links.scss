@@ -13,10 +13,10 @@
 
   a {
     text-decoration: none;
-    color: $primaryColor;
+    color: $darkerGrey;
     transition: color .2s;
     &:hover, &:focus, &:active {
-      color: darken($primaryColor,25);
+      color: $black;
       // text-decoration: underline;
       // text-decoration-skip: ink;
     }
