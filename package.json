@@ -1,6 +1,6 @@
 {
   "name": "custom-auth0-lock",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "CKC & partners Auth0 login",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "Wing Creative",
   "license": "MPL-2.0",
   "devDependencies": {
-    "browser-sync": "^2.24.7",
+    "browser-sync": "^2.26.3",
     "browserify": "^14.3.0",
     "del": "^2.2.2",
     "eslint": "^3.13.1",
@@ -28,6 +28,7 @@
   "dependencies": {
     "auth0-js": "^9.7.3",
     "promise-polyfill": "^8.1.0",
+    "string.prototype.startswith": "^0.2.0",
     "url-search-params-polyfill": "^4.0.1",
     "whatwg-fetch": "^2.0.4"
   }

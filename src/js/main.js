@@ -8,6 +8,7 @@ var settingsElement = document.getElementById( 'nlx-config' );
 window.Promise = require( 'promise-polyfill' );
 require( 'whatwg-fetch' );
 require( 'url-search-params-polyfill' );
+require( 'string.prototype.startswith' );
 polyfill();
 
 document.documentElement.className = 'has-js';
