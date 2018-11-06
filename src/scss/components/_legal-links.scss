@@ -14,7 +14,6 @@
   a {
     text-decoration: none;
     color: $darkerGrey;
-    transition: color .2s;
     &:hover, &:focus, &:active {
       color: $black;
       // text-decoration: underline;

@@ -22,7 +22,7 @@ body {
 }
 
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 h1 {
@@ -31,13 +31,12 @@ h1 {
 }
 
 a {
-  color: $primaryColor;
+  color: $darkerGrey;
   text-decoration: none;
+  transition: color .2s;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     color: $black;
-    text-decoration: underline;
-    text-decoration-skip: ink;
   }
 
 }

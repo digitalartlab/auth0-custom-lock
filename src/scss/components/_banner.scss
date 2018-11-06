@@ -10,8 +10,12 @@
   @media ( min-width: 30em ) {
     margin: -0.5em -1.5em 1em;
     padding: 1.5em;
+    + .banner {
+      margin-top: -1em;
+      padding-top: 0;
+    }  
   }
-
+  
   p {
     margin: 0;
     display: flex;

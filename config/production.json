@@ -14,7 +14,7 @@
   "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ],
   "cdn": "https://cdn.profiel.digitalartlab.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl; font-src 'self'; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",
+  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl https://ckc-zoetermeer.eu.auth0.com; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",
   "displayNames": {
     "facebook": "Facebook",
     "google-oauth2": "Google",

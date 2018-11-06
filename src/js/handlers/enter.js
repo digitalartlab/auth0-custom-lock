@@ -62,7 +62,7 @@ module.exports = function enter( element ) {
       .catch( function( err ) {
         console.error( err );
         if ( !supportsPasswordless ) {
-          ui.setLockState( element, 'method-not-available' );
+          ui.setLockState( element, 'error-fetch' );
         }
         else {
           showNonLDAP( element );
