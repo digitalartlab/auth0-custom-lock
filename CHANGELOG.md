@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.17] - 2018-12-05
+### Fixed
+- CSP error with Google Analytics
+
 ## [1.0.16] - 2018-12-05
 ### Changed
 - Send errors to Google Analytics for errors during decision of passwordless/password
