@@ -15,6 +15,19 @@ function showLDAP( element, passwordField, connection ) {
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
 }
 
+function errorMethodNotAvailable( element ) {
+  // error if account is not allowed on any active connection
+  ui.setLockState( element, 'method-not-available' );
+  fireGAEvent( 'Error', 'Method not available' );
+}
+
+function errorFetch( element ) {
+  // error if fetching User API data failed, either because the server is down or because IE 10 is a bitch
+  ui.setLockState( element, 'error-fetch' );
+  fireGAEvent( 'Error', 'User API: fetch failed' );
+}
+
+
 module.exports = function enter( element ) {
   var form = document.querySelector( 'form' );
   var emailField = document.getElementById( 'field-email' );
@@ -47,31 +60,26 @@ module.exports = function enter( element ) {
             showLDAP( element, passwordField, userinfo.connection );
           }
           else {
-            ui.setLockState( element, 'method-not-available' );
+            errorMethodNotAvailable( element );
           }
         }
         else {
           if ( !supportsPasswordless ) {
-            ui.setLockState( element, 'method-not-available' );
+            errorMethodNotAvailable( element );
           }
           else {
             showNonLDAP( element );
           }
         }
       })
-      .catch( function( err ) {
-        console.error( err );
-        if ( !supportsPasswordless ) {
-          ui.setLockState( element, 'error-fetch' );
-        }
-        else {
-          showNonLDAP( element );
-        }
+      .catch( function( ) {
+        // Always error if User API is down, as schools can't use Passwordless
+        errorFetch( element );
       });
   }
   else {
     if ( !supportsPasswordless ) {
-      ui.setLockState( element, 'method-not-available' );
+      errorMethodNotAvailable( element );
     }
     else {
       showNonLDAP( element );

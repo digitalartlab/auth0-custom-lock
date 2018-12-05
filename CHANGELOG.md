@@ -3,6 +3,28 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.16] - 2018-12-05
+### Changed
+- Send errors to Google Analytics for errors during decision of passwordless/password
+
+## [1.0.15] - 2018-11-06
+### Added
+- General <= IE 10 warning
+- Favicon
+
+### Changed
+- New error if Person API lookup fails, either because of <= IE 10 or because of server error
+- Updated Auth0.js to latest version
+
+## [1.0.15] - 2018-11-06
+### Added
+- General <= IE 10 warning
+- Favicon
+
+### Changed
+- New error if Person API lookup fails, either because of <= IE 10 or because of server error
+- Updated Auth0.js to latest version
+
 ## [1.0.14] - 2018-11-06
 ### Added
 - General <= IE 10 warning
