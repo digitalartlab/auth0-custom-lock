@@ -72,6 +72,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
                 <label for="field-password"><span>Wachtwoord</span></label>
               </div>
               <input type="submit" class="button button--full-width" id="authorise-ldap-credentials" value="Log in">
+              <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-password-reset">Wachtwoord vergeten?</button>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
@@ -113,6 +114,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
                 <label for="field-password-try-2"><span>Wachtwoord</span></label>
               </div>
               <input type="submit" class="button button--full-width" id="authorise-ldap-credentials-try-2" value="Log in">
+              <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-password-reset">Wachtwoord vergeten?</button>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
             </div>
@@ -142,6 +144,22 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <p>Hulp nodig? Mail dan naar <a href="mailto:account@ckc-zoetermeer.nl">account@ckc-zoetermeer.nl</a>.</p>
               <hr>
               <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Probeer opnieuw</button>
+            </div>
+            <div id="reset-password" data-screen hidden>
+              <p>Wachtwoord vergeten? Klik hieronder op de knop en we sturen je een mailtje om een nieuwe te kiezen.</p>
+              <ul class="list list--plain">
+                <li>
+                  <button class="button button--full-width button--primary" type="button" data-handler="send-password-reset-email">Herstel wachtwoord</button>
+                </li>
+              </ul>
+              <hr>
+              <button type="button" class="button button--full-width card__back button--text-only" data-handler="go-to-initial-page">Inloggen met een ander account?</button>
+            </div>
+            <div id="reset-password-success" data-screen hidden>
+              <h2 class="card__heading card__heading--success"><img src="{{{ cdn }}}/images/envelope.svg" class="card__heading-icon" alt=""> <span>Check je mail</span></h2>
+              <p>We hebben je een mail gestuurd om een nieuw wachtwoord in te stellen.</p>
+              <hr>
+              <button type="button" class="button button--text-only card__back  button--unpadded" data-handler="go-to-initial-page">Verkeerde emailadres?</button>
             </div>
             <div id="autologin-settings" data-screen hidden>
               <h2 class="card__heading card__heading--iconless">Auto-login instellingen</h2>

@@ -8,9 +8,11 @@ function showNonLDAP( element ) {
 }
 
 function showLDAP( element, passwordField, connection ) {
+  var emailField = document.getElementById( 'field-email' );
+
   // show password field
   ui.setLockState( element, 'ldap' );
-  element.dataset.connection = connection;
+  emailField.dataset.connection = connection;
 
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
 }
