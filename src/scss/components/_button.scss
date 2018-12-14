@@ -95,6 +95,9 @@
       border-color: $black;
     }
   }
+  &--text-small {
+    font-size: .75em;
+  }
 
   &--sign-up {
     border-color: $white;
