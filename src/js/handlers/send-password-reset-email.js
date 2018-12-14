@@ -5,7 +5,7 @@ module.exports = function reset( element ) {
   var emailField = document.getElementById( 'field-email' );
   var form = element.form;
   var connection = emailField.dataset.connection || null;
-  var email = emailField.nodeValue.toLowerCase();
+  var email = emailField.value.toLowerCase();
   var emailLocation = document.getElementById( 'reset-password-email-success-placeholder' );
 
   emailLocation.textContent = email;
