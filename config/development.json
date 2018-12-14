@@ -2,20 +2,20 @@
   "environment": "DEV",
   "auth0_domain": "ckc-zoetermeer.eu.auth0.com",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
-  "person_api_domain": "https://europe-west1-keystone-user-api.cloudfunctions.net/connection/sso/",
+  "person_api_domain": "http://localhost:3006/api/v1/sso/",
   "logout_url": "https://localhost",
   "sso_dashboard_url": "https://account.digitalartlab.nl",
   "GTM_ID": "GTM-5R8359C",
-  "client_ID": "rVnTYsvzWJEXQZrVYKnLQoE8Q98cdfQx",
+  "client_ID": "U9wHE0GBrCNCSqHbHu3nf9zBUEbnlvId",
   "features": {
     "autologin": "false",
     "person_api_lookup": "true",
-    "maintenance_mode": "true"
+    "maintenance_mode": "false"
   },
   "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ],
   "cdn": "",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl https://ckc-zoetermeer.eu.auth0.com; script-src 'self' 'unsafe-inline' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.profiel.digitalartlab.nl www.google-analytics.com",
+  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl https://ckc-zoetermeer.eu.auth0.com http://localhost:3006; script-src 'self' 'unsafe-inline' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.profiel.digitalartlab.nl www.google-analytics.com",
   "displayNames": {
     "facebook": "Facebook",
     "google-oauth2": "Google",
