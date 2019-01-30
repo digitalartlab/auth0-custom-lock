@@ -10,10 +10,6 @@ module.exports = function() {
       logoLocation.src = cdn + '/images/cos-logo.svg';
       logoAnchorLocation.href = 'https://cultuuropschool.nl';
     }
-    else if ( rp.startsWith( 'Digital Art Lab' ) ) {
-      logoLocation.src = cdn + '/images/dal-logo.svg';
-      logoAnchorLocation.href = 'https://digitalartlab.nl';
-    }
   }
 
 };
