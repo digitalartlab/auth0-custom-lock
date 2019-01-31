@@ -17,9 +17,14 @@ function showLDAP( element, passwordField, connection ) {
   fireGAEvent( 'Screen change', 'Continued as LDAP' );
 }
 
-function errorMethodNotAvailable( element ) {
+function errorMethodNotAvailable( element, connection ) {
   // error if account is not allowed on any active connection
-  ui.setLockState( element, 'method-not-available' );
+  if ( connection === 'Scholen' ) {
+    ui.setLockState( element, 'method-not-available-school' );
+  }
+  else {
+    ui.setLockState( element, 'method-not-available' );
+  }
   fireGAEvent( 'Error', 'Method not available' );
 }
 
@@ -62,7 +67,7 @@ module.exports = function enter( element ) {
             showLDAP( element, passwordField, userinfo.connection );
           }
           else {
-            errorMethodNotAvailable( element );
+            errorMethodNotAvailable( element, userinfo.connection );
           }
         }
         else {

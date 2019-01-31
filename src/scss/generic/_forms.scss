@@ -47,10 +47,6 @@ input[type="password"] {
     background-color: $white;
     border-color: $black;
   }
-
-  &:focus {
-    background-color: $white;
-  }
 }
 
 .form__input {
