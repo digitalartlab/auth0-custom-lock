@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.1.6] - 2019-04-30
+### Changed
+- Update dependencies (auth0-js, url-search-params-polyfill)
+
 ## [1.1.5] - 2019-01-31
 ### Added
 - Specific message if a school or partner account isn't allowed to login
