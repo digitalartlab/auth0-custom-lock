@@ -52,6 +52,12 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               <input type="submit" class="button button--full-width" id="enter-initial" value="Volgende">
               <hr>
               <ul class="login-options list list--plain">
+                <li data-optional-login-method="apple">
+                  <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-apple">
+                    <img  class="icon" src="{{{ cdn }}}/images/apple.svg" alt="">
+                    <span>Log in met Apple</span>
+                  </button>
+                </li>
                 <li data-optional-login-method="facebook">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
                     <img  class="icon" src="{{{ cdn }}}/images/facebook.svg" alt="">
@@ -84,6 +90,12 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
               </ul>
               <hr>
               <ul class="login-options list list--plain">
+                <li data-optional-login-method="apple">
+                  <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-apple">
+                    <img  class="icon" src="{{{ cdn }}}/images/apple.svg" alt="">
+                    <span>Log in met Apple</span>
+                  </button>
+                </li>
                 <li data-optional-login-method="facebook">
                   <button class="button button--full-width button--social button--secondary" type="button" data-handler="authorise-facebook">
                     <img  class="icon" src="{{{ cdn }}}/images/facebook.svg" alt="">
@@ -213,6 +225,7 @@ MPL-2.0 licentie op: https://github.com/digitalartlab/auth0-custom-lock
       "supportedLoginMethods": "{{{ supportedLoginMethods }}}",
       "logout_url": "{{{ logout_url }}}",
       "displayNames": {
+        "apple": "{{{ displayNames.apple }}}",
         "facebook": "{{{ displayNames.facebook }}}",
         "google-oauth2": "{{{ displayNames.google-oauth2 }}}",
         "Scholen": "{{{ displayNames.Scholen }}}",

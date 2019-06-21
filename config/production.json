@@ -11,11 +11,12 @@
     "person_api_lookup": "true",
     "maintenance_mode": "false"
   },
-  "supportedLoginMethods": [ "facebook", "google-oauth2", "email" ],
+  "supportedLoginMethods": [ "apple", "facebook", "google-oauth2", "email" ],
   "cdn": "https://cdn.profiel.digitalartlab.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
   "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl https://ckc-zoetermeer.eu.auth0.com https://www.google-analytics.com; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",
   "displayNames": {
+    "apple": "Apple",
     "facebook": "Facebook",
     "google-oauth2": "Google",
     "Scholen": "je schoolaccount",
