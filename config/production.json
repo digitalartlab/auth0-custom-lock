@@ -2,9 +2,9 @@
   "environment": "PROD",
   "auth0_domain": "auth.ckc-zoetermeer.nl",
   "auth0_tenant": "ckc-zoetermeer.eu.auth0.com",
-  "person_api_domain": "https://user-api.profiel.digitalartlab.nl/api/v1/sso/",
-  "logout_url": "https://profiel.digitalartlab.nl",
-  "sso_dashboard_url": "https://profiel.digitalartlab.nl",
+  "person_api_domain": "https://user-api.account.ckc-zoetermeer.nl/api/v1/sso/",
+  "logout_url": "https://account.ckc-zoetermeer.nl",
+  "sso_dashboard_url": "https://account.ckc-zoetermeer.nl",
   "GTM_ID": "GTM-5R8359C",
   "features": {
     "autologin": "false",
@@ -12,9 +12,9 @@
     "maintenance_mode": "false"
   },
   "supportedLoginMethods": [ "apple", "facebook", "google-oauth2", "email" ],
-  "cdn": "https://cdn.profiel.digitalartlab.nl",
+  "cdn": "https://cdn.account.ckc-zoetermeer.nl",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://user-api.profiel.digitalartlab.nl https://ckc-zoetermeer.eu.auth0.com https://www.google-analytics.com; script-src 'self' https://cdn.profiel.digitalartlab.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.profiel.digitalartlab.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.profiel.digitalartlab.nl https://www.google-analytics.com",
+  "csp": "default-src 'none'; connect-src 'self' https://user-api.account.ckc-zoetermeer.nl https://ckc-zoetermeer.eu.auth0.com https://www.google-analytics.com; script-src 'self' https://cdn.account.ckc-zoetermeer.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.account.ckc-zoetermeer.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.account.ckc-zoetermeer.nl https://www.google-analytics.com",
   "displayNames": {
     "apple": "Apple",
     "facebook": "Facebook",
