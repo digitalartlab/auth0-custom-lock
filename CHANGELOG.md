@@ -3,6 +3,13 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] - 2020-04-15
+### Changed
+- Author company name
+
+### Security
+- Update auth0.js to v9.13.2 to fix [CVE 2020-5263](https://auth0.com/docs/security/bulletins/cve-2020-5263)
+
 ## [1.4.0] - 2019-12-09
 ### Changed
 - Always go to LDAP (Personen) for an @ckc-zoetermeer.nl email
