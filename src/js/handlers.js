@@ -12,7 +12,6 @@ module.exports = {
   'go-to-password-reset': require( 'handlers/go-to-password-reset' ),
   'authorise-ldap': require( 'handlers/authorise-ldap' ),
   'authorise-google': require( 'handlers/authorise-google' ),
-  'authorise-facebook': require( 'handlers/authorise-facebook' ),
   'authorise-apple': require( 'handlers/authorise-apple' ),
   'send-password-reset-email': require( 'handlers/send-password-reset-email' ),
   'send-passwordless-link': require( 'handlers/send-passwordless-link' )

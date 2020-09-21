@@ -10,15 +10,14 @@
   "features": {
     "autologin": "false",
     "person_api_lookup": "true",
-    "maintenance_mode": "false"
+    "maintenance_mode": "true"
   },
-  "supportedLoginMethods": [ "apple", "facebook", "google-oauth2", "email" ],
+  "supportedLoginMethods": [ "apple", "google-oauth2", "email" ],
   "cdn": "",
   "fonts": "https://use.typekit.net/zrw6ubz.css",
-  "csp": "default-src 'none'; connect-src 'self' https://user-api.account.ckc-zoetermeer.nl https://ckc-zoetermeer.eu.auth0.com http://localhost:3006; script-src 'self' 'unsafe-inline' https://cdn.account.ckc-zoetermeer.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.account.ckc-zoetermeer.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net; img-src 'self' https://cdn.account.ckc-zoetermeer.nl www.google-analytics.com",
+  "csp": "default-src 'none'; connect-src 'self' https://user-api.account.ckc-zoetermeer.nl https://ckc-zoetermeer.eu.auth0.com http://localhost:3006; script-src 'self' 'unsafe-inline' https://cdn.account.ckc-zoetermeer.nl https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' https://cdn.account.ckc-zoetermeer.nl https://use.typekit.net https://p.typekit.net; font-src 'self' https://use.typekit.net data; img-src 'self' https://cdn.account.ckc-zoetermeer.nl www.google-analytics.com",
   "displayNames": {
     "apple": "Apple",
-    "facebook": "Facebook",
     "google-oauth2": "Google",
     "Scholen": "je schoolaccount",
     "Personen": "je CKC ID",
