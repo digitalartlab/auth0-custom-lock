@@ -1,15 +1,8 @@
-module.exports = function fillInSessioInfo( p ) {
+module.exports = function fillInSessioInfo() {
   var params = new URLSearchParams( window.location.search ) || null;
-  var email = p.querySelector( '[data-email]' );
-  var loginMethod = p.querySelector( '[data-login-method]' );
+  var emailField = document.getElementById( 'field-email' );
 
-  if ( params.get( 'user_email' ) ) {
-    email.querySelector( 'strong' ).textContent = params.get( 'user_email' );
-    email.removeAttribute( 'hidden' );
-  }
-
-  if ( params.get( 'user_login_method' ) ) {
-    loginMethod.querySelector( 'strong' ).textContent = params.get( 'user_login_method' );
-    loginMethod.removeAttribute( 'hidden' );
+  if ( params.get( 'login_hint' ) ) {
+    emailField.value = params.get( 'login_hint' );
   }
 };

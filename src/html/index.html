@@ -37,7 +37,7 @@ MPL-2.0 licentie op https://github.com/digitalartlab/auth0-custom-lock
         <a href="https://ckc-zoetermeer.nl" class="logo" target="_blank" id="logoAnchor" rel="noopener"><img alt="CKC &amp; partners" id="logo" src="{{{ cdn }}}/images/ckc-logo.svg"></a>
         <noscript><p>CKC ID werkt niet zonder JavaScript. Schakel dat alsjeblieft in.</p></noscript>
         <form data-decorator="init-auth handle-submit" method="post" action="/" lock-state="initial">
-          <fieldset class="hidden-lastpass-password-offset" data-decorator="decide-screen">
+          <fieldset class="hidden-lastpass-password-offset" data-decorator="fill-in-session-info filter-connections">
             <legend class="rp-name"><h1>Inloggen</h1>Ga door naar <span id="rp-name-placeholder" class="rp-name__text">CKC &amp; partners</span></legend>
             <div id="loading" class="loading" data-screen hidden>
               <p class="visually-hidden">Laden…</p>
@@ -166,19 +166,6 @@ MPL-2.0 licentie op https://github.com/digitalartlab/auth0-custom-lock
               <p>We hebben een mail gestuurd naar <strong id="reset-password-email-success-placeholder">je e-mailadres</strong> om een nieuw wachtwoord in te stellen.</p>
               <hr>
               <button type="button" class="button button--text-only card__back  button--unpadded" data-handler="go-to-initial-page">Verkeerde emailadres?</button>
-            </div>
-            <div id="autologin-settings" data-screen hidden>
-              <h2 class="card__heading card__heading--iconless">Auto-login instellingen</h2>
-              <p data-decorator="fill-in-session-info">Je bent momenteel ingelogd<span data-email hidden> als <strong></strong></span><span data-login-method hidden> met <strong></strong></span>.</p>
-              <div class="setting">
-                <input type="checkbox" id="use-autologin-2" data-decorator="set-autologin-preference" checked>
-                <label for="use-autologin-2"><span class="setting__toggle"></span> <span class="setting__enabled-text">Auto-login is ingeschakeld</span><span class="setting__disabled-text">Auto-login is uitgeschakeld</span></label>
-              </div>
-              <hr>
-              <ul class="login-options list list--plain">
-                <li><a href="{{{ sso_dashboard_url }}}" class="button button--full-width button--secondary">Terug naar Dashboard</a></li>
-                <li><a href="{{{ sso_dashboard_url }}}/logout" class="button button--full-width button--secondary">Uitloggen</a></li>
-              </ul>
             </div>
             {{! this input is intentionally hidden to trigger LastPass }}
             <input type="password" id="hidden-lastpass-password" autocomplete="current-password" name="hidden-lastpass-password" aria-hidden>
