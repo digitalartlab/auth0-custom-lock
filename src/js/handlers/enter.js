@@ -1,5 +1,6 @@
 var ui = require( 'helpers/ui' );
 var fireGAEvent = require( 'helpers/fire-ga-event' );
+var authorizeAD = require( 'handlers/authorise-ad' );
 
 function showNonLDAP( element ) {
   // show social logins + passwordless
@@ -41,7 +42,7 @@ module.exports = function enter( element ) {
   var emailFieldValue = emailField.value.toLowerCase();
   var supportedByRP = form.loginMethods ? form.loginMethods['supportedByRP'] : null;
   var supportsPasswordless = supportedByRP && supportedByRP.indexOf( 'email' ) > -1;
-  var qualifiesForLDAPShortcut = /@(ckc-zoetermeer\.nl)$/.test( emailFieldValue );
+  var qualifiesForADShortcut = /@(ckc-zoetermeer\.nl)$/.test( emailFieldValue );
   var ENDPOINT = NLX.person_api_domain;
 
   if ( emailField.value === '' || emailField.validity.valid === false ) {
@@ -50,9 +51,9 @@ module.exports = function enter( element ) {
   }
 
   // Send @ckc-zoetermeer.nl emails straight to LDAP
-  if ( qualifiesForLDAPShortcut ) {
-    showLDAP( element, 'Personen' );
-  }
+  //if ( qualifiesForADShortcut ) {
+  //  showLDAP( element, 'Personen' );
+  //}
   else if ( NLX.features.person_api_lookup ) {
 
     ui.setLockState( element, 'loading' );
@@ -64,9 +65,18 @@ module.exports = function enter( element ) {
       .then( function( data ) {
         var userinfo = data;
 
+        var isAD = userinfo.hasOwnProperty( 'email' ) && userinfo.hasOwnProperty( 'connection' ) && userinfo[ 'connection' ] === 'ckc-azure-ad';
         var isLDAP = userinfo.hasOwnProperty( 'email' ) && userinfo.hasOwnProperty( 'connection' ) && ( userinfo[ 'connection' ] === 'Scholen' || userinfo[ 'connection' ] === 'Personen' );
 
-        if ( isLDAP ) {
+        if ( isAD ) {
+          if ( supportedByRP.indexOf( userinfo.connection ) !== -1 ) {
+            authorizeAD( element, emailFieldValue );
+          }
+          else {
+            errorMethodNotAvailable( element, userinfo.connection );
+          }
+        }
+        else if ( isLDAP ) {
           if ( supportedByRP.indexOf( userinfo.connection ) !== -1 ) {
             showLDAP( element, userinfo.connection );
           }
@@ -75,7 +85,10 @@ module.exports = function enter( element ) {
           }
         }
         else {
-          if ( !supportsPasswordless ) {
+          if ( qualifiesForADShortcut ) {
+            authorizeAD( element, emailFieldValue );
+          }
+          else if ( !supportsPasswordless ) {
             errorMethodNotAvailable( element );
           }
           else {

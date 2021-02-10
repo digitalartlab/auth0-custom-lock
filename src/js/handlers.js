@@ -10,6 +10,7 @@ module.exports = {
   'enter': require( 'handlers/enter' ),
   'go-to-initial-page': require( 'handlers/go-to-initial-page' ),
   'go-to-password-reset': require( 'handlers/go-to-password-reset' ),
+  'authorise-ad': require( 'handlers/authorise-ad' ),
   'authorise-ldap': require( 'handlers/authorise-ldap' ),
   'authorise-google': require( 'handlers/authorise-google' ),
   'authorise-apple': require( 'handlers/authorise-apple' ),
