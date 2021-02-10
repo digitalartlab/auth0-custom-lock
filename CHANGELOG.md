@@ -4,8 +4,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.5.0] - 2020-02-10
+### Added
+- Log in with Azure AD for employees
+
+### Changed
+- Link to repo on GitHub
+- Check which connection to use for @ckc-zoetermeer.nl email for the duration of the migration to Azure AD
+
 ### Removed
-- Facebook login. We were never gonna use it.
+- Facebook login. We were never gonna use it
+- Old code that's now covered by native Auth0 functionality
 
 ## [1.4.1] - 2020-04-15
 ### Changed
